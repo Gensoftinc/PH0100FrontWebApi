@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class ProductDetailsController {
 
-	
+	 
 	
 	@RequestMapping(value = "/showSingleProductDetails", method = RequestMethod.GET)
 	public ModelAndView showSingleProductDetails(HttpServletRequest req, HttpServletResponse res )
