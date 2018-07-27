@@ -12,30 +12,34 @@
                   <table id="example1" class="table table-bordered table-striped">
                     <thead>
                       <tr>
-                        <th></th>
-                        <th>Browser</th>
-                        <th>Platform(s)</th>
-                        <th>Engine version</th>
-                        <th>CSS grade</th>
+                      	<th>Sr. No.</th>
+                        <th>Product Name</th>
+                        <th>Product Description</th>
+                        <th>Price</th>
+                        <th>Note</th>
+                        <th>Updated Date</th>
+                        <th>Weight</th>
+                        <th>Discount</th>
+                        <th>Image</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Trident</td>
-                        <td>Internet
-                          Explorer 4.0</td>
-                        <td>Win 95+</td>
-                        <td> 4</td>
-                        <td>X</td>
+                        <td>1</td>
+                        <td>Shoes</td>
+                        <td>This is men shoes</td>
+                        <td>400</td>
+                        <td>ccncjjd</td>
+                        <td>27/07/2018</td>
+                        <td>100</td>
+                        <td>100</td>
+                        <td>shoe.jpg</td>
+                        <td><span class="fa-pencil fa fa-fw"></span></td>
+                        <td><span class="fa-trash fa fa-fw"></span></td>
                       </tr>
-                      <tr>
-                        <td>Trident</td>
-                        <td>Internet
-                          Explorer 5.0</td>
-                        <td>Win 95+</td>
-                        <td>5</td>
-                        <td>C</td>
-                      </tr>  
+                     
                     </tbody>
                     <!-- <tfoot>
                       <tr>

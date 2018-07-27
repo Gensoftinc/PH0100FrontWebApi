@@ -61,8 +61,8 @@
                         This is men category
                       </td>
                       <td><span class="badge bg-red">kk.jpg</span></td>
-                    <td ><span class="fa-pencil fa fa-fw"></span></td>
-                    <td ><span class="fa-trash fa fa-fw"></span></td>
+                      <td><span class="fa-pencil fa fa-fw"></span></td>
+                      <td><span class="fa-trash fa fa-fw"></span></td>
                     
                     </tr>
                    
