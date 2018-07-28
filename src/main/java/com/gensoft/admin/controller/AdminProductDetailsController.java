@@ -14,7 +14,7 @@ public class AdminProductDetailsController {
 	
 	/**
 	 * 
-	 * @param req
+	 * @param req 
 	 * @param res
 	 * @return
 	 */ 
