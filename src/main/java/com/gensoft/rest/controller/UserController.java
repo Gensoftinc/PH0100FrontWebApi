@@ -8,18 +8,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.gensoft.database.model.User;
 import com.gensoft.repository.UserRepository;
+import com.gensoft.rest.constant.APIName;
 
-@RestController("/rest-api")
+@RestController(APIName.USER_CONTROLLER)
 public class UserController {
 
 	@Autowired
 	UserRepository userRepository;
 
-	@RequestMapping(value = "/userLogin", method = RequestMethod.GET)
+	@RequestMapping(value = APIName.USER_LOGIN, method = RequestMethod.GET)
 	public User userLogin(@RequestBody User user) {
-
 		return userRepository.findAll().get(0);
 	}
 
 }
- 
