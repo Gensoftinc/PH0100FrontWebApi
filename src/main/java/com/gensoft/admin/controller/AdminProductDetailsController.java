@@ -28,8 +28,7 @@ public class AdminProductDetailsController {
 	
 	/**
 	 * 
-	 * @param req
-	 * @param res
+	 * @param req	 * @param res
 	 * @return
 	 */
 	@RequestMapping(value = "/showSubCategoryDetails", method = RequestMethod.GET)
