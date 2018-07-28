@@ -17,7 +17,7 @@ public class AdminProductDetailsController {
 	 * @param req
 	 * @param res
 	 * @return
-	 */
+	 */ 
 	@RequestMapping(value = "/showCategoryDetails", method = RequestMethod.GET)
 	public ModelAndView showCategoryDetails(HttpServletRequest req, HttpServletResponse res )
 	{

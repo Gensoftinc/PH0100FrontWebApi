@@ -14,7 +14,7 @@ public class ProductCategory {
 	private int delStatus;
 	
 	private String pictures;
-
+ 
 	public int getCatId() {
 		return catId;
 	}

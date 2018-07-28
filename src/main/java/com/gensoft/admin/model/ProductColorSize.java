@@ -12,7 +12,7 @@ public class ProductColorSize {
 	private int delStatus;
 	
 	private String color;
-	
+	 
 	private String size;
 
 	public int getColorSizeId() {
