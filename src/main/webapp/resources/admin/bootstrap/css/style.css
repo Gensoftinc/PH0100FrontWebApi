@@ -1,0 +1,9 @@
+@charset "ISO-8859-1";
+.datepicker  {background: #fff !important}
+.datepicker th {background: #0098d0; color:#fff; border-radius: 0 !important; border: solid 1px #ccc !important;}
+.datepicker td  {border: solid 1px #ccc !important;}
+.datepicker .active {background: #00a3df !important; color:#fff !important}
+.datepicker .month , .datepicker .year {text-align: center;}
+.ui-datepicker .ui-datepicker-title, .ui-datepicker .ui-datepicker-header { background: #3cb3eb; color: #fff;}
+.ui-datepicker-calendar tr:nth-of-type(odd) {background:#fff!important}
+.ui-datepicker th {background:#3cb3eb}
