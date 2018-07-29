@@ -2,7 +2,8 @@ package com.gensoft.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.gensoft.database.model.User;
+import com.gensoft.common.model.User;
+
 
 /**
  * User Repository
@@ -11,5 +12,6 @@ import com.gensoft.database.model.User;
  *
  */
 public interface UserRepository extends JpaRepository<User, Long> {
+
+	User findByEmailAndDeleted(String email,int deleted);  
 }
- 
