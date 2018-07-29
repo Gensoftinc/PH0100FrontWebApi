@@ -14,7 +14,7 @@ public class ProductDetailsServiceImpl implements ProductDetailsService{
 
 	
 	@Autowired
-	ProductDetailsRepository productDetailsRepository;
+	private ProductDetailsRepository productDetailsRepository;
 	
 	
 	@Override
