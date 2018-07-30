@@ -3,14 +3,15 @@ package com.gensoft.common.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gensoft.common.model.ProductCategory;
 import com.gensoft.common.repository.ProductCategoryRepository;
-@Service
+@Service()
 public class ProductCategoryServiceImpl implements ProductCategoryService{
 
-	
+	@Autowired
 	private ProductCategoryRepository productCategoryRepository;
 	
 	@Override
