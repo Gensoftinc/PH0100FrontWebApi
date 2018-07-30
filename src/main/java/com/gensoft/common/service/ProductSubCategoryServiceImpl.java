@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.gensoft.common.model.ProductSubCategory;
 import com.gensoft.common.repository.ProductSubCategoryRepository;
-
+ 
 @Service 
 public class ProductSubCategoryServiceImpl implements ProductSubCategoryService{
 	
