@@ -10,4 +10,6 @@ public interface ProductCategoryRepository extends JpaRepository<ProductCategory
 
 	
 	List<ProductCategory> findByDelStatus(int delStatus);
+	
+	ProductCategory save(ProductCategory productCategory); 
 }

@@ -36,10 +36,10 @@ public class ProductCategory {
 	private String pictures;
 	
 	@Column(name="int_1")
-	private String int1;
+	private int int1;
 	
 	@Column(name="int_2")
-	private String int2;
+	private int int2;
 	
 	@Column(name="string_1")
 	private String string1;
@@ -48,21 +48,7 @@ public class ProductCategory {
 	private String string2;
 	
 
-	public String getInt1() {
-		return int1;
-	}
-
-	public void setInt1(String int1) {
-		this.int1 = int1;
-	}
-
-	public String getInt2() {
-		return int2;
-	}
-
-	public void setInt2(String int2) {
-		this.int2 = int2;
-	}
+	
 
 	public String getString1() {
 		return string1;
@@ -128,11 +114,29 @@ public class ProductCategory {
 		this.pictures = pictures;
 	}
 
+	public int getInt1() {
+		return int1;
+	}
+
+	public void setInt1(int int1) {
+		this.int1 = int1;
+	}
+
+	public int getInt2() {
+		return int2;
+	}
+
+	public void setInt2(int int2) {
+		this.int2 = int2;
+	}
+
 	@Override
 	public String toString() {
 		return "ProductCategory [catId=" + catId + ", catName=" + catName + ", catDesc=" + catDesc + ", type=" + type
-				+ ", delStatus=" + delStatus + ", pictures=" + pictures + "]";
+				+ ", delStatus=" + delStatus + ", pictures=" + pictures + ", int1=" + int1 + ", int2=" + int2
+				+ ", string1=" + string1 + ", string2=" + string2 + "]";
 	}
+
 	
 	
 

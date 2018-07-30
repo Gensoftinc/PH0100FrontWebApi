@@ -26,4 +26,19 @@ public class ProductCategoryServiceImpl implements ProductCategoryService{
 		return productCategoryList;
 	}
 
+	@Override
+	public ProductCategory insertProductCategory(ProductCategory productCategory) {
+		
+		System.out.println("bfvhdvhbj");
+		try {
+			
+			productCategory=productCategoryRepository.save(productCategory);
+			System.out.println("Products "+productCategory);
+			
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		return productCategory;
+	}
 }

@@ -29,14 +29,14 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @Entity
 @Table(name = "users")
 @Inheritance(strategy = InheritanceType.JOINED)
-//@EntityListeners(AuditingEntityListener.class)
+@EntityListeners(AuditingEntityListener.class)
 public class User {
-	 
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "user_id")
 	private long userId;
- 
+
 	@Column(name = "create_date")
 	@Temporal(TemporalType.TIMESTAMP)
 	@CreatedDate
@@ -47,28 +47,28 @@ public class User {
 
 	@Column(name = "middle_name", length = 50)
 	private String middleName;
-	
+
 	@Column(name = "last_name", length = 50)
 	private String lastName;
-	
+
 	@Column(name = "email", length = 100)
 	private String email;
-	
+
 	/** Last modified date */
 	@LastModifiedDate
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "last_modified_date")
 	private Date lastModifiedDate;
-	
+
 	@Column(name = "password_hash", length = 15)
 	private String passwordHash;
-	
+
 	@Column(name = "deleted")
 	private int deleted;
-	
+
 	@Column(name = "status", length = 2)
 	private int status;
-		
+
 	public long getUserId() {
 		return userId;
 	}
@@ -133,8 +133,6 @@ public class User {
 		this.passwordHash = passwordHash;
 	}
 
-	
-
 	public int getStatus() {
 		return status;
 	}
@@ -157,8 +155,5 @@ public class User {
 				+ middleName + ", lastName=" + lastName + ", email=" + email + ", lastModifiedDate=" + lastModifiedDate
 				+ ", passwordHash=" + passwordHash + ", deleted=" + deleted + ", status=" + status + "]";
 	}
-
-	
-	
 
 }
