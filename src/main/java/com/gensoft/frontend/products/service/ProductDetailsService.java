@@ -11,4 +11,6 @@ public interface ProductDetailsService {
 	public List<ProductDetails> getProductBySubCatId(int subCatId);
 	public ProductDetails getProductDetailsByProductId(int productId, int delStatus);
 	public List<ProductColorSize> getProductColorSizeQtyByProductId(int productId, int delStatus);
+	
+	public ProductDetails insertProduct(ProductDetails productDetails);
 }

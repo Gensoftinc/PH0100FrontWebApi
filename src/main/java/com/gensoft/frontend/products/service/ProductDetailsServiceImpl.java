@@ -66,6 +66,16 @@ public class ProductDetailsServiceImpl implements ProductDetailsService{
 	}
 
 	
-	
+	@Override
+	public ProductDetails insertProduct(ProductDetails productDetails) {
+		
+		try {
+		productDetails=	productDetailsRepository.save(productDetails);
+		}
+		catch (Exception e) {
+			System.out.println(e.getMessage());// TODO: handle exception
+		}
+		return productDetails;
+	}
 	
 }

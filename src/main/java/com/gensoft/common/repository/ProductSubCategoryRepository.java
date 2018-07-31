@@ -13,6 +13,6 @@ public interface ProductSubCategoryRepository extends JpaRepository<ProductSubCa
 	
 	List<ProductSubCategory> findByCatIdAndDelStatus(int catId, int delStatus);
 	
-	
+	List<ProductSubCategory> findByDelStatus(int delStatus);
 
 }
