@@ -57,14 +57,6 @@ public class ProductDetailsController {
 		
 		model.addObject("productCategoryList", productCategoryList);
 		
-		
-		/*List<ProductDetails> productDetailsList=new ArrayList<ProductDetails>();
-		
-		productDetailsList=productDetailsService.getProductBySubCatId(1);
-		
-		
-		System.out.println("productDetailsList  "+productDetailsList.toString());
-		*/
 		return model;
 	}
 	
@@ -100,11 +92,7 @@ public class ProductDetailsController {
 		
 		return model;
 	}
-	
-	
-	
-	 
-	
+
 	@RequestMapping(value = "/showSingleProductDetails/{productId}", method = RequestMethod.GET)
 	public ModelAndView showSingleProductDetails(@PathVariable int productId, HttpServletRequest req, HttpServletResponse res )
 	{
