@@ -1,6 +1,6 @@
 package com.gensoft.admin.controller;
 
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,7 +19,6 @@ import com.gensoft.common.model.ProductDetails;
 import com.gensoft.common.model.ProductSubCategory;
 import com.gensoft.common.service.ProductCategoryService;
 import com.gensoft.common.service.ProductSubCategoryService;
-import com.gensoft.database.model.Info;
 import com.gensoft.frontend.products.service.ProductDetailsService;
 
 /**
@@ -39,51 +38,41 @@ public class AdminProductDetailsController {
 	@Autowired
 	ProductDetailsService productDetailsService;
 
-	/**
-	 * 
-	 * @param req
-	 * @param res
-	 * @return
-	 */
 	@RequestMapping(value = "/showCategoryDetails", method = RequestMethod.GET)
 	public ModelAndView showCategoryDetails(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView model = new ModelAndView("admin/e-commerce/add_product_category");
+		List<ProductCategory> productCategoryList = new ArrayList<ProductCategory>();
+		productCategoryList = productCategoryService.getAllCategory(0);
 
+		model.addObject("productCategoryList", productCategoryList);
 		return model;
 	}
 
-	/**
-	 * 
-	 * @param req
-	 *            * @param res
-	 * @return
-	 */
 	@RequestMapping(value = "/showSubCategoryDetails", method = RequestMethod.GET)
 	public ModelAndView showSubCategoryDetails(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView model = new ModelAndView("admin/e-commerce/product_sub_category");
 
+		List<ProductSubCategory> productSubCategoryList = new ArrayList<ProductSubCategory>();
+		productSubCategoryList = productSubCategoryService.getAllSubCategory(0);
+
+		List<ProductCategory> productCategoryList = new ArrayList<ProductCategory>();
+		productCategoryList = productCategoryService.getAllCategory(0);
+
+		model.addObject("productCategoryList", productCategoryList);
+		model.addObject("productSubCategoryList", productSubCategoryList);
 		return model;
 	}
 
-	/**
-	 * 
-	 * @param req
-	 * @param res
-	 * @return
-	 */
 	@RequestMapping(value = "/showProductDetails", method = RequestMethod.GET)
 	public ModelAndView showProductDetails(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView model = new ModelAndView("admin/e-commerce/product_details");
+		List<ProductSubCategory> productSubCategoryList = new ArrayList<ProductSubCategory>();
+		productSubCategoryList = productSubCategoryService.getAllSubCategory(0);
 
+		model.addObject("productSubCategoryList", productSubCategoryList);
 		return model;
 	}
 
-	/**
-	 * 
-	 * @param req
-	 * @param res
-	 * @return
-	 */
 	@RequestMapping(value = "/showAllProduct", method = RequestMethod.GET)
 	public ModelAndView showAllProduct(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView model = new ModelAndView("admin/e-commerce/show_products");
@@ -91,12 +80,6 @@ public class AdminProductDetailsController {
 		return model;
 	}
 
-	/**
-	 * 
-	 * @param req
-	 * @param res
-	 * @return
-	 */
 	@RequestMapping(value = "/submitProductCategory", method = RequestMethod.POST)
 	public ModelAndView submitProductCategory(HttpServletRequest req, HttpServletResponse res,
 			@RequestParam("pictures") List<MultipartFile> pictures) {
@@ -110,8 +93,8 @@ public class AdminProductDetailsController {
 		productCategory.setPictures(imageName);
 		productCategory.setDelStatus(0);
 		productCategory.setType(0);
-		System.out.println("Product Cat= " + productCategory);
-		productCategory=productCategoryService.insertProductCategory(productCategory);
+
+		productCategory = productCategoryService.insertProductCategory(productCategory);
 
 		return model;
 	}
@@ -157,15 +140,13 @@ public class AdminProductDetailsController {
 		productDetails.setProdDesc(req.getParameter("prodDesc"));
 		productDetails.setNote(req.getParameter("note"));
 		productDetails.setDiscount(Integer.parseInt(req.getParameter("discount")));
-		productDetails.setPicture(req.getParameter("picture"));
+		productDetails.setImageId(Integer.parseInt(req.getParameter("imageId")));
 		productDetails.setPrice(Integer.parseInt(req.getParameter("price")));
 		productDetails.setWeight(Integer.parseInt(req.getParameter("weight")));
-		/*
-		 * productDetails.setUpdatedDate(req.getParameter("updatedDate"));
-		 * 
-		 * 
-		 * productDetails=productDetailsService.insertProduct(productDetails);
-		 */
+
+		// productDetails.setUpdatedDate(req.getParameter("updatedDate"));
+
+		productDetails = productDetailsService.insertProduct(productDetails);
 
 		return model;
 	}

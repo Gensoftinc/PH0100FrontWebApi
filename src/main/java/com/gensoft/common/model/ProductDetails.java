@@ -56,8 +56,8 @@ public class ProductDetails implements Serializable {
 	
 
 	/** product picture */
-	@Column(name = "picture", length = 100)
-	private String picture;
+	@Column(name = "image_id", length = 100)
+	private int imageId;
 	
 	/** product picture */
 	@Column(name = "note", length = 200)
@@ -155,12 +155,13 @@ public class ProductDetails implements Serializable {
 		this.weight = weight;
 	}
 
-	public String getPicture() {
-		return picture;
+
+	public int getImageId() {
+		return imageId;
 	}
 
-	public void setPicture(String picture) {
-		this.picture = picture;
+	public void setImageId(int imageId) {
+		this.imageId = imageId;
 	}
 
 	public String getNote() {
@@ -218,14 +219,10 @@ public class ProductDetails implements Serializable {
 	@Override
 	public String toString() {
 		return "ProductDetails [prodId=" + prodId + ", subCatId=" + subCatId + ", prodName=" + prodName + ", prodDesc="
-				+ prodDesc + ", price=" + price + ", discount=" + discount + ", weight=" + weight + ", picture="
-				+ picture + ", note=" + note + ", updatedDate=" + updatedDate + ", delStatus=" + delStatus + ", int1="
+				+ prodDesc + ", price=" + price + ", discount=" + discount + ", weight=" + weight + ", imageId="
+				+ imageId + ", note=" + note + ", updatedDate=" + updatedDate + ", delStatus=" + delStatus + ", int1="
 				+ int1 + ", int2=" + int2 + ", string1=" + string1 + ", string2=" + string2 + "]";
 	}
- 
-		
-	
-	
-	
-	
+
+
 }

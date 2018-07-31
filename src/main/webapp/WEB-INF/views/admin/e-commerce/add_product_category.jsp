@@ -1,4 +1,5 @@
 <jsp:include page="../../admin-include/header.jsp"></jsp:include> 
+      <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
       <!-- Main content -->
       <div class="content-wrapper">
       <section class="content">
@@ -10,20 +11,20 @@
                   <h3 class="box-title">Add New Category</h3>
                 </div><!-- /.box-header -->
                 <!-- form start -->
-                <form role="form">
+                <form action="${pageContext.request.contextPath}/submitProductCategory" enctype="multipart/form-data" method="POST">
                   <div class="box-body">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Category Name</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Category">
+                      <input type="text" class="form-control" id="" name="catName" placeholder="Enter Category">
                     </div>
                    
                     <div class="form-group">
                       <label>Category Description</label>
-                      <textarea class="form-control" rows="3" placeholder="Enter Category Description"></textarea>
+                      <textarea class="form-control" rows="3" name="catDesc" placeholder="Enter Category Description"></textarea>
                     </div>
                     <div class="form-group">
                       <label for="exampleInputFile">File input</label>
-                      <input type="file" id="exampleInputFile">
+                      <input type="file" id="exampleInputFile" name="pictures">
                       
                     </div>
                    
@@ -54,18 +55,17 @@
                       <th style="width: 40px" >Edit</th>
                       <th style="width: 40px" >Delete</th>
                     </tr>
+                    <c:forEach items="${productCategoryList}" var="productCategoryList">
                     <tr>
-                      <td>1.</td>
-                      <td>Men</td>
-                      <td>
-                        This is men category
-                      </td>
-                      <td><span class="badge bg-red">kk.jpg</span></td>
+                      <td>${productCategoryList.catId}</td>
+                      <td>${productCategoryList.catName}</td>
+                      <td>${productCategoryList.catDesc}</td>
+                      <td><span class="badge bg-red">${productCategoryList.pictures}</span></td>
                       <td><span class="fa-pencil fa fa-fw"></span></td>
                       <td><span class="fa-trash fa fa-fw"></span></td>
                     
                     </tr>
-                   
+                   </c:forEach>
                   </table>
                 </div><!-- /.box-body -->
               <!--   <div class="box-footer clearfix">
