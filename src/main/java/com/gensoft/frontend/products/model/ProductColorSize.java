@@ -32,8 +32,8 @@ public class ProductColorSize {
 	@Column(name="size")
 	private String size;
 	
-	@Column(name="int_1")
-	private String int1;
+	@Column(name="image_id")
+	private String imageId;
 	
 	@Column(name="int_2")
 	private String int2;
@@ -44,12 +44,14 @@ public class ProductColorSize {
 	@Column(name="string_2")
 	private String string2;
 	
-	public String getInt1() {
-		return int1;
+	
+
+	public String getImageId() {
+		return imageId;
 	}
 
-	public void setInt1(String int1) {
-		this.int1 = int1;
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
 	}
 
 	public String getInt2() {
@@ -127,8 +129,10 @@ public class ProductColorSize {
 	@Override
 	public String toString() {
 		return "ProductColorSize [colorSizeId=" + colorSizeId + ", productId=" + productId + ", productQty="
-				+ productQty + ", delStatus=" + delStatus + ", color=" + color + ", size=" + size + "]";
+				+ productQty + ", delStatus=" + delStatus + ", color=" + color + ", size=" + size + ", imageId="
+				+ imageId + ", int2=" + int2 + ", string1=" + string1 + ", string2=" + string2 + "]";
 	}
+
 	
 	
 	
