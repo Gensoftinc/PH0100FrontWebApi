@@ -10,4 +10,6 @@ public interface ProductCategoryService {
 	List<ProductCategory> getAllCategory(int delStatus);
 	
 	ProductCategory insertProductCategory(ProductCategory productCategory);
+
+	public List<ProductCategory> getAllProductCatecoryWithSubCategory(int delStatus);
 }

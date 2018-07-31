@@ -4,8 +4,9 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.gensoft.frontend.products.model.ProductDetails;
+import com.gensoft.common.model.ProductDetails;
 
+ 
  
 
 public interface ProductDetailsRepository extends JpaRepository<ProductDetails, Integer>{
