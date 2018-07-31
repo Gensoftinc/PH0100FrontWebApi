@@ -49,88 +49,89 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<!--content-->
 			<div class="content">
 				<div class="products-agileinfo">
-						<h2 class="tittle">Women's Wear</h2>
+						<h2 class="tittle">${subCatName}</h2>
 					<div class="container">
 						<div class="product-agileinfo-grids w3l">
 							<div class="col-md-3 product-agileinfo-grid">
 								<div class="categories">
 									<h3>Categories</h3>
 									<ul class="tree-list-pad">
-										<li><input type="checkbox" checked="checked" id="item-0" /><label for="item-0"><span></span>Women's Wear</label>
+									
+									<c:set var="item_index" value="0">
+									
+									</c:set>
+									<li><input type="checkbox" checked="checked" id="item-0" /><label for="item-0"><span></span>Men's</label>
+									
+									 <c:forEach var="productCategory" items="${productCategoryList}">
+									 
+									 <c:choose>
+									 
+									 <c:when test="${productCategory.type==1}">
+									 
+									
+									
 											<ul>
-												<li><input type="checkbox" id="item-0-0" /><label for="item-0-0">Ethnic Wear</label>
+												<li><input type="checkbox" id="item-0-${item_index}" /><label for="item-0-${item_index}">${productCategory.catName}45</label>
+													
+													
 													<ul>
-														<li><a href="products.html">Shirts</a></li>
-														<li><a href="products.html">Caps</a></li>
-														<li><a href="products.html">Shoes</a></li>
-														<li><a href="products.html">Pants</a></li>
-														<li><a href="products.html">SunGlasses</a></li>
-														<li><a href="products.html">Trousers</a></li>
+													 <c:forEach var="productSubCategoryList" items="${productCategory.productSubCategoryList}">
+														<li><a href="${pageContext.request.contextPath}/showProducts/${productSubCategoryList.subCatId}/${productSubCategoryList.subCatName}"">${productSubCategoryList.subCatName}</a></li>
+														 </c:forEach>
 													</ul>
+													
 												</li>
-												<li><input type="checkbox"  id="item-0-1" /><label for="item-0-1">Party Wear</label>
-													<ul>
-														<li><a href="products.html">Shirts</a></li>
-														<li><a href="products.html">Caps</a></li>
-														<li><a href="products.html">Shoes</a></li>
-														<li><a href="products.html">Pants</a></li>
-														<li><a href="products.html">SunGlasses</a></li>
-														<li><a href="products.html">Trousers</a></li>
-													</ul>
-												</li>
-												<li><input type="checkbox"  id="item-0-2" /><label for="item-0-2">Casual Wear</label>
-													<ul>
-														<li><a href="products.html">Shirts</a></li>
-														<li><a href="products.html">Caps</a></li>
-														<li><a href="products.html">Shoes</a></li>
-														<li><a href="products.html">Pants</a></li>
-														<li><a href="products.html">SunGlasses</a></li>
-														<li><a href="products.html">Trousers</a></li>
-													</ul>
-												</li>
+												
+												
+												
+												
+												 
 											</ul>
+											<c:set var="item_index" value="${item_index+1}"/>
+									
+									 </c:when>
+									 </c:choose>
+									
+									</c:forEach>
 										</li>
-										<li><input type="checkbox" id="item-1" checked="checked" /><label for="item-1">Best Collections</label>
+									<c:set var="item_index" value="0"/>
+										<li><input type="checkbox" checked="checked" id="item-1" /><label for="item-1"><span></span>Women's</label>
+									
+									 <c:forEach var="productCategory" items="${productCategoryList}">
+									 
+									 <c:choose>
+									 
+									 <c:when test="${productCategory.type==2}">
+									 
+									
+									
 											<ul>
-												<li><input type="checkbox" checked="checked" id="item-1-0" /><label for="item-1-0">New Arrivals</label>
+												<li><input type="checkbox" id="item-1-${item_index}" /><label for="item-1-${item_index}">${productCategory.catName}</label>
 													<ul>
-														<li><a href="products.html">Shirts</a></li>
-														<li><a href="products.html">Shoes</a></li>
-														<li><a href="products.html">Pants</a></li>
-														<li><a href="products.html">SunGlasses</a></li>
+													 <c:forEach var="productSubCategoryList" items="${productCategory.productSubCategoryList}">
+														<li><a href="${pageContext.request.contextPath}/showProducts/${productSubCategoryList.subCatId}/${productSubCategoryList.subCatName}">${productSubCategoryList.subCatName}</a></li>
+														 </c:forEach>
 													</ul>
 												</li>
 												
+												<c:set var="item_index" value="${item_index+1}"/>
+												 
+											 
 											</ul>
+									
+									 </c:when>
+									 </c:choose>
+									
+									</c:forEach>
 										</li>
-										<li><input type="checkbox" checked="checked" id="item-2" /><label for="item-2">Best Offers</label>
-											<ul>
-												<li><input type="checkbox"  id="item-2-0" /><label for="item-2-0">Summer Discount Sales</label>
-													<ul>
-														<li><a href="products.html">Shirts</a></li>
-														<li><a href="products.html">Shoes</a></li>
-														<li><a href="products.html">Pants</a></li>
-														<li><a href="products.html">SunGlasses</a></li>
-													</ul>
-												</li>
-												<li><input type="checkbox" id="item-2-1" /><label for="item-2-1">Exciting Offers</label>
-													<ul>
-														<li><a href="products.html">Shirts</a></li>
-														<li><a href="products.html">Shoes</a></li>
-														<li><a href="products.html">Pants</a></li>
-														<li><a href="products.html">SunGlasses</a></li>
-													</ul>
-												</li>
-												<li><input type="checkbox" id="item-2-2" /><label for="item-2-2">Flat Discounts</label>
-													<ul>
-														<li><a href="products.html">Shirts</a></li>
-														<li><a href="products.html">Shoes</a></li>
-														<li><a href="products.html">Pants</a></li>
-														<li><a href="products.html">SunGlasses</a></li>
-													</ul>
-												</li>
-											</ul>
-										</li>
+									
+									
+									
+									
+									
+									
+									 
+										 
 									</ul>
 								</div>
 								<div class="price">
@@ -172,7 +173,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 									<div class="recent-grids">
 										<div class="recent-left">
-											<a href="single.html"><img class="img-responsive " src="images/r1.jpg" alt=""></a>	
+											<a href="single.html"><img class="img-responsive " src="${pageContext.request.contextPath}/resources/images/r1.jpg" alt=""></a>	
 										</div>
 										<div class="recent-right">
 											<h6 class="best2"><a href="single.html">Duis aute irure </a></h6>
@@ -220,7 +221,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</div>
 							<div class="col-md-9 product-agileinfon-grid1 w3l">
-								<div class="product-agileinfon-top">
+								<%-- <div class="product-agileinfon-top">
 									<div class="col-md-6 product-agileinfon-top-left">
 										<img class="img-responsive " src="${pageContext.request.contextPath}/resources/images/img1.jpg" alt="">
 									</div>
@@ -228,7 +229,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<img class="img-responsive " src="${pageContext.request.contextPath}/resources/images/img2.jpg" alt="">
 									</div>
 									<div class="clearfix"></div>
-								</div>
+								</div> --%>
+								<%--
 								<div class="mens-toolbar">
 									<p >Showing 1–9 of 21 results</p>
 									 <p class="showing">Sorting By
@@ -249,15 +251,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									  </p>
 									<div class="clearfix"></div>		
 								</div>
+								 --%>
 								<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
 									<ul id="myTab" class="nav1 nav1-tabs left-tab" role="tablist">
-										<ul id="myTab" class="nav nav-tabs left-tab" role="tablist">
+										<%-- <ul id="myTab" class="nav nav-tabs left-tab" role="tablist">
 									<li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true"><img src="${pageContext.request.contextPath}/resources/images/menu1.png"></a></li>
 									<li role="presentation"><a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile"><img src="${pageContext.request.contextPath}/resources/images/menu.png"></a></li>
-									</ul>
+									</ul> --%>
 									<div id="myTabContent" class="tab-content">
 										<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
 											<div class="product-tab">
+											
+											
+											
+											 <c:forEach var="productDetails" items="${productDetailsList}">
+											
 												<div class="col-md-4 product-tab-grid simpleCart_shelfItem">
 													<div class="grid-arr">
 														<div  class="grid-arrival">
@@ -276,301 +284,43 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 															<div class="starbox small ghosting"> </div>
 														</div>
 														<div class="women">
-															<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-															<span class="size">XL / XXL / S </span>
-															<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
+															<h6><a href="${pageContext.request.contextPath}/showSingleProductDetails/${productDetails.prodId}">${productDetails.prodName}</a></h6>
+															<!-- <span class="size">XL / XXL / S </span> -->
+															<p ><!-- <del>$100.00</del> --><em class="item_price">Rs. ${productDetails.price}</em></p>
 															<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
 														</div>
 													</div>
 												</div>
-												<div class="col-md-4 product-tab-grid simpleCart_shelfItem">
-													<div class="grid-arr">
-														<div  class="grid-arrival">
-															<figure>		
-																<a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
-																	<div class="grid-img">
-																		<img  src="${pageContext.request.contextPath}/resources/images/p21.jpg" class="img-responsive" alt="">
-																	</div>
-																	<div class="grid-img">
-																		<img  src="${pageContext.request.contextPath}/resources/images/p22.jpg" class="img-responsive"  alt="">
-																	</div>			
-																</a>		
-															</figure>	
-														</div>
-														<div class="block">
-															<div class="starbox small ghosting"> </div>
-														</div>
-														<div class="women">
-															<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-															<span class="size">XL / XXL / S </span>
-															<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-															<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-														</div>
-													</div>
-												</div>
-												<div class="col-md-4 product-tab-grid simpleCart_shelfItem">
-													<div class="grid-arr">
-														<div  class="grid-arrival">
-															<figure>		
-																<a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
-																	<div class="grid-img">
-																		<img  src="${pageContext.request.contextPath}/resources/images/p14.jpg" class="img-responsive" alt="">
-																	</div>
-																	<div class="grid-img">
-																		<img  src="${pageContext.request.contextPath}/resources/images/p13.jpg" class="img-responsive"  alt="">
-																	</div>			
-																</a>		
-															</figure>	
-														</div>
-														<div class="block">
-															<div class="starbox small ghosting"> </div>
-														</div>
-														<div class="women">
-															<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-															<span class="size">XL / XXL / S </span>
-															<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-															<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-														</div>
-													</div>
-												</div>
+												
+												
+												</c:forEach>
+												
+												
+												 
+												 
+												 
+												
+												 
+												 
+												 
+												 
+												
+												 
+												 
+												 
 												<div class="clearfix"></div>
 											</div>
-											<div class="product-tab prod1">
-												<div class="col-md-4 product-tab-grid simpleCart_shelfItem">
-													<div class="grid-arr">
-														<div  class="grid-arrival">
-															<figure>		
-																<a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
-																	<div class="grid-img">
-																		<img  src="images/i2.jpg" class="img-responsive" alt="">
-																	</div>
-																	<div class="grid-img">
-																		<img  src="images/i1.jpg" class="img-responsive"  alt="">
-																	</div>			
-																</a>		
-															</figure>	
-														</div>
-														<div class="block">
-															<div class="starbox small ghosting"> </div>
-														</div>
-														<div class="women">
-															<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-															<span class="size">XL / XXL / S </span>
-															<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-															<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-														</div>
-													</div>
-												</div>
-												<div class="col-md-4 product-tab-grid simpleCart_shelfItem">
-													<div class="grid-arr">
-														<div  class="grid-arrival">
-															<figure>		
-																<a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
-																	<div class="grid-img">
-																		<img  src="${pageContext.request.contextPath}/resources/images/i4.jpg" class="img-responsive" alt="">
-																	</div>
-																	<div class="grid-img">
-																		<img  src="${pageContext.request.contextPath}/resources/images/i3.jpg" class="img-responsive"  alt="">
-																	</div>			
-																</a>		
-															</figure>	
-														</div>
-														<div class="block">
-															<div class="starbox small ghosting"> </div>
-														</div>
-														<div class="women">
-															<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-															<span class="size">XL / XXL / S </span>
-															<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-															<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-														</div>
-													</div>
-												</div>
-												<div class="col-md-4 product-tab-grid simpleCart_shelfItem">
-													<div class="grid-arr">
-														<div  class="grid-arrival">
-															<figure>		
-																<a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
-																	<div class="grid-img">
-																		<img  src="${pageContext.request.contextPath}/resources/images/i6.jpg" class="img-responsive" alt="">
-																	</div>
-																	<div class="grid-img">
-																		<img  src="${pageContext.request.contextPath}/resources/images/i5.jpg" class="img-responsive"  alt="">
-																	</div>			
-																</a>		
-															</figure>	
-														</div>
-														<div class="block">
-															<div class="starbox small ghosting"> </div>
-														</div>
-														<div class="women">
-															<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-															<span class="size">XL / XXL / S </span>
-															<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-															<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-														</div>
-													</div>
-												</div>
-												<div class="clearfix"></div>
-											</div>
-											<div class="product-tab">
-												<div class="col-md-4 product-tab-grid simpleCart_shelfItem">
-													<div class="grid-arr">
-														<div  class="grid-arrival">
-															<figure>		
-																<a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
-																	<div class="grid-img">
-																		<img  src="${pageContext.request.contextPath}/resources/images/i8.jpg" class="img-responsive" alt="">
-																	</div>
-																	<div class="grid-img">
-																		<img  src="${pageContext.request.contextPath}/resources/images/i7.jpg" class="img-responsive"  alt="">
-																	</div>			
-																</a>		
-															</figure>	
-														</div>
-														<div class="block">
-															<div class="starbox small ghosting"> </div>
-														</div>
-														<div class="women">
-															<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-															<span class="size">XL / XXL / S </span>
-															<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-															<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-														</div>
-													</div>
-												</div>
-												<div class="col-md-4 product-tab-grid simpleCart_shelfItem">
-													<div class="grid-arr">
-														<div  class="grid-arrival">
-															<figure>		
-																<a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
-																	<div class="grid-img">
-																		<img  src="${pageContext.request.contextPath}/resources/images/i10.jpg" class="img-responsive" alt="">
-																	</div>
-																	<div class="grid-img">
-																		<img  src="${pageContext.request.contextPath}/resources/images/i9.jpg" class="img-responsive"  alt="">
-																	</div>			
-																</a>		
-															</figure>	
-														</div>
-														<div class="block">
-															<div class="starbox small ghosting"> </div>
-														</div>
-														<div class="women">
-															<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-															<span class="size">XL / XXL / S </span>
-															<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-															<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-														</div>
-													</div>
-												</div>
-												<div class="col-md-4 product-tab-grid simpleCart_shelfItem">
-													<div class="grid-arr">
-														<div  class="grid-arrival">
-															<figure>		
-																<a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
-																	<div class="grid-img">
-																		<img  src="${pageContext.request.contextPath}/resources/images/i12.jpg" class="img-responsive" alt="">
-																	</div>
-																	<div class="grid-img">
-																		<img  src="${pageContext.request.contextPath}/resources/images/i11.jpg" class="img-responsive"  alt="">
-																	</div>			
-																</a>		
-															</figure>	
-														</div>
-														<div class="block">
-															<div class="starbox small ghosting"> </div>
-														</div>
-														<div class="women">
-															<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-															<span class="size">XL / XXL / S </span>
-															<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-															<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-														</div>
-													</div>
-												</div>
-												<div class="clearfix"></div>
-											</div>
-											<div class="product-tab prod2">
-												<div class="col-md-4 product-tab-grid simpleCart_shelfItem">
-													<div class="grid-arr">
-														<div  class="grid-arrival">
-															<figure>		
-																<a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
-																	<div class="grid-img">
-																		<img  src="${pageContext.request.contextPath}/resources/images/i8.jpg" class="img-responsive" alt="">
-																	</div>
-																	<div class="grid-img">
-																		<img  src="${pageContext.request.contextPath}/resources/images/i7.jpg" class="img-responsive"  alt="">
-																	</div>			
-																</a>		
-															</figure>	
-														</div>
-														<div class="block">
-															<div class="starbox small ghosting"> </div>
-														</div>
-														<div class="women">
-															<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-															<span class="size">XL / XXL / S </span>
-															<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-															<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-														</div>
-													</div>
-												</div>
-												<div class="col-md-4 product-tab-grid simpleCart_shelfItem">
-													<div class="grid-arr">
-														<div  class="grid-arrival">
-															<figure>		
-																<a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
-																	<div class="grid-img">
-																		<img  src="${pageContext.request.contextPath}/resources/images/i14.jpg" class="img-responsive" alt="">
-																	</div>
-																	<div class="grid-img">
-																		<img  src="${pageContext.request.contextPath}/resources/images/i13.jpg" class="img-responsive"  alt="">
-																	</div>			
-																</a>		
-															</figure>	
-														</div>
-														<div class="block">
-															<div class="starbox small ghosting"> </div>
-														</div>
-														<div class="women">
-															<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-															<span class="size">XL / XXL / S </span>
-															<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-															<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-														</div>
-													</div>
-												</div>
-												<div class="col-md-4 product-tab-grid simpleCart_shelfItem">
-													<div class="grid-arr">
-														<div  class="grid-arrival">
-															<figure>		
-																<a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
-																	<div class="grid-img">
-																		<img  src="${pageContext.request.contextPath}/resources/images/i2.jpg" class="img-responsive" alt="">
-																	</div>
-																	<div class="grid-img">
-																		<img  src="${pageContext.request.contextPath}/resources/images/i1.jpg" class="img-responsive"  alt="">
-																	</div>			
-																</a>		
-															</figure>	
-														</div>
-														<div class="block">
-															<div class="starbox small ghosting"> </div>
-														</div>
-														<div class="women">
-															<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
-															<span class="size">XL / XXL / S </span>
-															<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-															<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
-														</div>
-													</div>
-												</div>
-												<div class="clearfix"></div>
-											</div>
+											
+											
+											
+											
+											
+										
+											
+											
+											
 										</div>
-										<div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
+										<%-- <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
 											<div class="product-tab1">
 												<div class="col-md-4 product-tab1-grid">
 													<div class="grid-arr">
@@ -729,7 +479,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												<div class="clearfix"></div>
 											</div>
 											
-										</div>
+										</div> --%>
 									</div>
 								</div>
 							</div>

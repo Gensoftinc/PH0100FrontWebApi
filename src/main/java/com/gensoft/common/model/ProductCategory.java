@@ -2,12 +2,15 @@ package com.gensoft.common.model;
 
 
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 
 @Entity
@@ -47,6 +50,8 @@ public class ProductCategory {
 	@Column(name="string_2")
 	private String string2;
 	
+@Transient
+private List<ProductSubCategory> productSubCategoryList;
 
 	
 
@@ -130,12 +135,25 @@ public class ProductCategory {
 		this.int2 = int2;
 	}
 
+	public List<ProductSubCategory> getProductSubCategoryList() {
+		return productSubCategoryList;
+	}
+
+	public void setProductSubCategoryList(List<ProductSubCategory> productSubCategoryList) {
+		this.productSubCategoryList = productSubCategoryList;
+	}
+
 	@Override
 	public String toString() {
 		return "ProductCategory [catId=" + catId + ", catName=" + catName + ", catDesc=" + catDesc + ", type=" + type
 				+ ", delStatus=" + delStatus + ", pictures=" + pictures + ", int1=" + int1 + ", int2=" + int2
-				+ ", string1=" + string1 + ", string2=" + string2 + "]";
+				+ ", string1=" + string1 + ", string2=" + string2 + ", productSubCategoryList=" + productSubCategoryList
+				+ "]";
 	}
+
+	 
+ 
+	 
 
 	
 	

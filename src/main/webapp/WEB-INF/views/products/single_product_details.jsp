@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+        <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    
+    
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -105,26 +109,26 @@ $(window).load(function() {
 								<div class="single-left">
 									<div class="flexslider">
 										<ul class="slides">
-											<li data-thumb="images/si.jpg">
+											<li data-thumb="${pageContext.request.contextPath}/resources/images/si.jpg">
 												<div class="thumb-image"> <img src="${pageContext.request.contextPath}/resources/images/si.jpg" data-imagezoom="true" class="img-responsive"> </div>
 											</li>
-											<li data-thumb="images/si1.jpg">
+											<li data-thumb="${pageContext.request.contextPath}/resources/images/si1.jpg">
 												 <div class="thumb-image"> <img src="${pageContext.request.contextPath}/resources/images/si1.jpg" data-imagezoom="true" class="img-responsive"> </div>
 											</li>
-											<li data-thumb="images/si2.jpg">
+											<li data-thumb="${pageContext.request.contextPath}/resources/images/si2.jpg">
 											   <div class="thumb-image"> <img src="${pageContext.request.contextPath}/resources/images/si2.jpg" data-imagezoom="true" class="img-responsive"> </div>
 											</li> 
 										 </ul>
 									</div>
 								</div>
 								<div class="single-right simpleCart_shelfItem">
-									<h4>Sed do eiusmod tempor</h4>
+									<h4>${productDetails.prodName}</h4>
 									<div class="block">
-										<div class="starbox small ghosting"> </div>
+										<!-- <div class="starbox small ghosting"> </div> -->
 									</div>
-									<p class="price item_price">$ 14.00</p>
+									<p class="price item_price">Rs. ${productDetails.price}</p>
 									<div class="description">
-										<p><span>Quick Overview : </span> In cursus faucibus tortor eu vestibulum. Ut eget turpis ac justo porta varius. Donec vel felis ante, ac vehicula ipsum. Quisque sed diam metus. Quisque eget leo sit amet erat varius rutrum vitae dapibus lectus. Vivamus et sapien ante. Suspendisse potenti. Fusce in tellus est, ac consequat.</p>
+										<p><span>Quick Overview : </span> ${productDetails.prodDesc}.</p>
 									</div>
 									<div class="color-quality">
 										<h6>Quality :</h6>
@@ -150,7 +154,15 @@ $(window).load(function() {
 													<!--quantity-->
 									</div>
 									<div class="women">
-										<span class="size">XL / XXL / S </span>
+										<span class="size">
+										
+			 		  <c:forEach var="productColorSizeList" items="${productColorSizeList}">
+			 		  
+			 		  
+			 		  <a href="#" >${productColorSizeList.color}-${productColorSizeList.size} /</a>
+			 		  
+			 		  </c:forEach>
+										 </span>
 										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
 									</div>
 									<div class="social-icon">
@@ -221,7 +233,7 @@ $(window).load(function() {
 						<div class="clearfix"> </div>
 					</div>
 					<!--Product Description-->
-						<div class="product-w3agile">
+						<%-- <div class="product-w3agile">
 							<h3 class="tittle1">Product Description</h3>
 							<div class="product-grids">
 								<div class="col-md-4 product-grid">
@@ -417,7 +429,7 @@ $(window).load(function() {
 								</div>
 								<div class="clearfix"> </div>
 							</div>
-						</div>
+						</div> --%>
 					<!--Product Description-->
 				</div>
 			</div>
