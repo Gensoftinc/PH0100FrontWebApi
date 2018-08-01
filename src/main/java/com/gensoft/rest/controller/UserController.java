@@ -14,11 +14,10 @@ import com.gensoft.rest.constant.APIName;
 public class UserController {
 
 	@Autowired
-	UserRepository userRepository;
+	private UserRepository userRepository;
 
 	@RequestMapping(value = APIName.USER_LOGIN, method = RequestMethod.GET)
 	public User userLogin(@RequestBody User user) {
 		return userRepository.findAll().get(0);
 	}
-
 }

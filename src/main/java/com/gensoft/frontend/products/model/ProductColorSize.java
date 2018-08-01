@@ -1,6 +1,5 @@
 package com.gensoft.frontend.products.model;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,42 +8,40 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="product_color_size")
+@Table(name = "product_color_size")
 public class ProductColorSize {
-	 
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="color_size_id")
+	@Column(name = "color_size_id")
 	private int colorSizeId;
-	
-	@Column(name="prod_id")
+
+	@Column(name = "prod_id")
 	private int productId;
-	
-	@Column(name="prod_qty")
+
+	@Column(name = "prod_qty")
 	private int productQty;
-	
-	@Column(name="del_status")
+
+	@Column(name = "del_status")
 	private int delStatus;
-	
-	@Column(name="color")
+
+	@Column(name = "color")
 	private String color;
-	
-	@Column(name="size")
+
+	@Column(name = "size")
 	private String size;
-	
-	@Column(name="image_id")
+
+	@Column(name = "image_id")
 	private String imageId;
-	
-	@Column(name="int_2")
+
+	@Column(name = "int_2")
 	private String int2;
-	
-	@Column(name="string_1")
+
+	@Column(name = "string_1")
 	private String string1;
-	
-	@Column(name="string_2")
+
+	@Column(name = "string_2")
 	private String string2;
-	
-	
 
 	public String getImageId() {
 		return imageId;
@@ -132,10 +129,4 @@ public class ProductColorSize {
 				+ productQty + ", delStatus=" + delStatus + ", color=" + color + ", size=" + size + ", imageId="
 				+ imageId + ", int2=" + int2 + ", string1=" + string1 + ", string2=" + string2 + "]";
 	}
-
-	
-	
-	
-	
-
 }
