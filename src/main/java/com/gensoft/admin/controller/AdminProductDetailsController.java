@@ -11,9 +11,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.gensoft.common.model.ImageDetails;
 import com.gensoft.common.model.ProductCategory;
 import com.gensoft.common.model.ProductDetails;
 import com.gensoft.common.model.ProductSubCategory;
@@ -37,6 +39,8 @@ public class AdminProductDetailsController {
 
 	@Autowired
 	ProductDetailsService productDetailsService;
+	
+	List<ImageDetails> imageDetailsList;
 
 	@RequestMapping(value = "/showCategoryDetails", method = RequestMethod.GET)
 	public ModelAndView showCategoryDetails(HttpServletRequest req, HttpServletResponse res) {
@@ -68,7 +72,7 @@ public class AdminProductDetailsController {
 		ModelAndView model = new ModelAndView("admin/e-commerce/product_details");
 		List<ProductSubCategory> productSubCategoryList = new ArrayList<ProductSubCategory>();
 		productSubCategoryList = productSubCategoryService.getAllSubCategory(0);
-
+		imageDetailsList=new ArrayList<ImageDetails>();
 		model.addObject("productSubCategoryList", productSubCategoryList);
 		return model;
 	}
@@ -149,6 +153,24 @@ public class AdminProductDetailsController {
 		productDetails = productDetailsService.insertProduct(productDetails);
 
 		return model;
+	}
+	
+	@RequestMapping(value = "/addImagesInList", method = RequestMethod.GET)
+	public @ResponseBody List<ImageDetails> addImagesInList(HttpServletRequest request,
+			HttpServletResponse response) {
+		System.out.println("dsbcsj");
+	   	ImageDetails imageDetails = new ImageDetails();
+	
+		String fileName = request.getParameter("fileName");
+		System.out.println("cdcc"+fileName);
+		imageDetails.setImageName(fileName);
+		
+		imageDetailsList.add(imageDetails);
+		
+		System.out.println("Image Details" + imageDetailsList.toString());
+
+		return imageDetailsList;
+
 	}
 
 }
