@@ -183,4 +183,10 @@ public class UserAddress {
 		return lastModifiedDate;
 	}
 
+	@Override
+	public String toString() {
+		return "UserAddress [addressId=" + addressId + ", userId=" + userId + ", address=" + address + ", phoneNumber="
+				+ phoneNumber + ", city=" + city + ", country=" + country + ", deleted=" + deleted + ", creationDate="
+				+ creationDate + ", lastModifiedDate=" + lastModifiedDate + "]";
+	}
 }

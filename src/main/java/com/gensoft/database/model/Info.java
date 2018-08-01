@@ -1,6 +1,12 @@
 package com.gensoft.database.model;
 
+/** 
+ * TODO Insert class comment here.
+ * <p>
+ * @author Author name, (c) Copyright 2018 GenSoft, Inc. All Rights Reserved.
+ */
 public class Info {
+	
 	private String message;
        
 	private boolean isError;
@@ -25,6 +31,4 @@ public class Info {
 	public String toString() {
 		return "Info [message=" + message + ", isError=" + isError + "]";
 	}
-	
 }
-

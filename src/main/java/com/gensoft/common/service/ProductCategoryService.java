@@ -3,13 +3,17 @@ package com.gensoft.common.service;
 import java.util.List;
 
 import com.gensoft.common.model.ProductCategory;
-import com.gensoft.database.model.Info;
 
+/**
+ * TODO Insert class comment here.
+ * <p>
+ * @author Author name, (c) Copyright 2018 GenSoft, Inc. All Rights Reserved.
+ */
 public interface ProductCategoryService {
 
-	List<ProductCategory> getAllCategory(int delStatus);
-	
-	ProductCategory insertProductCategory(ProductCategory productCategory);
+	public List<ProductCategory> getAllCategory(int delStatus);
+
+	public ProductCategory insertProductCategory(ProductCategory productCategory);
 
 	public List<ProductCategory> getAllProductCatecoryWithSubCategory(int delStatus);
 }
