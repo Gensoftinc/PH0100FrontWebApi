@@ -8,25 +8,25 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.context.annotation.SessionScope;
+import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.servlet.ModelAndView;
+
 import com.gensoft.common.model.User;
 import com.gensoft.service.UserLoginService;
 
 /**
+ * TODO Insert class comment here.
+ * <p>
  * 
  * @author KUdavant, (c) Copyright 2018 GenSoft, Inc. All Rights Reserved.
- *
  */
 @Controller
-@Scope("session")
+@Scope(WebApplicationContext.SCOPE_SESSION)
 public class UserLoginController {
 
-	
 	@Autowired
-	UserLoginService userLoginService;
-	
-	
+	private UserLoginService userLoginService;
+
 	/**
 	 * TODO
 	 * 
@@ -36,9 +36,7 @@ public class UserLoginController {
 	 */
 	@RequestMapping(value = "/showUserLogin", method = RequestMethod.GET)
 	public ModelAndView showUserLogin(HttpServletRequest req, HttpServletResponse res) {
-		ModelAndView model = new ModelAndView("login/user_login");
-
-		return model;
+		return new ModelAndView("login/user_login");
 	}
 
 	/**
@@ -50,12 +48,8 @@ public class UserLoginController {
 	 */
 	@RequestMapping(value = "/userLoginProcess", method = RequestMethod.POST)
 	public User userLoginProcess(HttpServletRequest req, HttpServletResponse res) {
-
 		String email = req.getParameter("email");
-		
-		String password=req.getParameter("password");
-
-		return userLoginService.getUserDetailsByEmailAndDeleted(email,password,0);
+		String password = req.getParameter("password");
+		return userLoginService.getUserDetailsByEmailAndDeleted(email, password, 0);
 	}
-
 }
