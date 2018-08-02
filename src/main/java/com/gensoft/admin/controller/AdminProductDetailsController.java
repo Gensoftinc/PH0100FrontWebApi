@@ -164,7 +164,7 @@ public class AdminProductDetailsController {
 	}
 	
 	@RequestMapping(value = "/addImagesInList", method = RequestMethod.GET)
-	public @ResponseBody List<ImageDetails> addImagesInList(HttpServletRequest request,
+	public @ResponseBody List<ImageDetails> addImagesInList(HttpServletRequest request, 
 			HttpServletResponse response) {
 		
 		

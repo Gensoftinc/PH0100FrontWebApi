@@ -6,7 +6,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.gensoft.common.model.ImageDetails;
 import com.gensoft.common.model.ProductDetails;
+import com.gensoft.common.repository.ImageDetailsRepository;
 import com.gensoft.frontend.products.model.ProductColorSize;
  import com.gensoft.frontend.products.repository.ProductColorSizeRepository;
 import com.gensoft.frontend.products.repository.ProductDetailsRepository;
@@ -21,6 +23,8 @@ public class ProductDetailsServiceImpl implements ProductDetailsService{
 	@Autowired
 	private ProductColorSizeRepository productColorSizeRepository;
 	
+	@Autowired
+	private ImageDetailsRepository imageDetailsRepository;
 	
 	@Override
 	public List<ProductDetails> getProductBySubCatId(int subCatId) {
@@ -71,11 +75,28 @@ public class ProductDetailsServiceImpl implements ProductDetailsService{
 		
 		try {
 		productDetails=	productDetailsRepository.save(productDetails);
+		
+		
 		}
 		catch (Exception e) {
 			System.out.println(e.getMessage());// TODO: handle exception
 		}
 		return productDetails;
+	}
+	
+	@Override
+	public List<ImageDetails> insertImages(List<ImageDetails> imageDetailsList) {
+		
+		try {
+			
+			imageDetailsList=	imageDetailsRepository.save(imageDetailsList);
+		
+		
+		}
+		catch (Exception e) {
+			System.out.println(e.getMessage());// TODO: handle exception
+		}
+		return imageDetailsList;
 	}
 	
 }
