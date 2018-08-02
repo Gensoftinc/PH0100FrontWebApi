@@ -23,7 +23,7 @@ import com.gensoft.service.UserLoginService;
 @Controller
 @Scope(WebApplicationContext.SCOPE_SESSION)
 public class UserLoginController {
-
+ 
 	@Autowired
 	private UserLoginService userLoginService;
 
