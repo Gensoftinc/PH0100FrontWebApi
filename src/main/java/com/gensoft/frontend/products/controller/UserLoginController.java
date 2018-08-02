@@ -29,6 +29,7 @@ public class UserLoginController {
 
 	/**
 	 * TODO
+	 * 
 	 * @param req
 	 * @param res
 	 * @return
@@ -39,15 +40,17 @@ public class UserLoginController {
 	}
 
 	/**
-	 * TODO 
+	 * TODO
+	 * 
 	 * @param req
 	 * @param res
 	 * @return
 	 */
 	@RequestMapping(value = "/userLoginProcess", method = RequestMethod.POST)
-	public User userLoginProcess(HttpServletRequest req, HttpServletResponse res) {
+	public String userLoginProcess(HttpServletRequest req, HttpServletResponse res) {
 		String email = req.getParameter("email");
 		String password = req.getParameter("password");
-		return userLoginService.getUserDetailsByEmailAndDeleted(email, password, 0);
+		userLoginService.getUserDetailsByEmailAndDeleted(email, password, 0);
+		return "redirect:/showProductsHome";
 	}
 }
