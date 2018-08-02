@@ -71,7 +71,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									
 									
 											<ul>
-												<li><input type="checkbox" id="item-0-${item_index}" /><label for="item-0-${item_index}">${productCategory.catName}45</label>
+												<li><input type="checkbox" id="item-0-${item_index}" /><label for="item-0-${item_index}">${productCategory.catName}</label>
 													
 													
 													<ul>
