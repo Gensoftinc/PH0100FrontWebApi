@@ -148,9 +148,20 @@
                 <i class="fa fa-dashboard"></i> <span>Product Management</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Add Category</a></li>
-				<li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Add Product Color and Size</a></li>
-                <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Add Product</a></li>
+                <li class="active"><a href="${pageContext.request.contextPath}/showCategoryDetails"><i class="fa fa-circle-o"></i> Add Category</a></li>
+				<li class="active"><a href="${pageContext.request.contextPath}/showSubCategoryDetails"><i class="fa fa-circle-o"></i> Add Sub Category</a></li>
+                <li class="active"><a href="${pageContext.request.contextPath}/showProductDetails"><i class="fa fa-circle-o"></i> Add Product</a></li>
+              </ul>
+            </li>
+            
+            <li class="active treeview">
+              <a href="#">
+                <i class="fa fa-dashboard"></i> <span>Product Display</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li class="active"><a href="${pageContext.request.contextPath}/showCategoryDetails"><i class="fa fa-circle-o"></i> Add Category</a></li>
+				<li class="active"><a href="${pageContext.request.contextPath}/showSubCategoryDetails"><i class="fa fa-circle-o"></i> Add Sub Category</a></li>
+                <li class="active"><a href="${pageContext.request.contextPath}/showProductDetails"><i class="fa fa-circle-o"></i> Add Product</a></li>
               </ul>
             </li>
           </ul>
