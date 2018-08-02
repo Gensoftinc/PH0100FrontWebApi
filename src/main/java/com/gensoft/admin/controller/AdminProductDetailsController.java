@@ -147,17 +147,27 @@ public class AdminProductDetailsController {
 		productDetails.setImageId(Integer.parseInt(req.getParameter("imageId")));
 		productDetails.setPrice(Integer.parseInt(req.getParameter("price")));
 		productDetails.setWeight(Integer.parseInt(req.getParameter("weight")));
-
+		productDetails.setQuantity(Integer.parseInt(req.getParameter("quantity")));
+		productDetails.setSize(req.getParameter("size"));
+		
 		// productDetails.setUpdatedDate(req.getParameter("updatedDate"));
 
 		productDetails = productDetailsService.insertProduct(productDetails);
-
+		int prodId=productDetails.getProdId();
+		for(int i=0;i<imageDetailsList.size();i++) {
+		imageDetailsList.get(i).setProductId(prodId);
+		}
+		System.out.println("Image List"+imageDetailsList);
+		imageDetailsList=productDetailsService.insertImages(imageDetailsList);
+		
 		return model;
 	}
 	
 	@RequestMapping(value = "/addImagesInList", method = RequestMethod.GET)
 	public @ResponseBody List<ImageDetails> addImagesInList(HttpServletRequest request,
 			HttpServletResponse response) {
+		
+		
 		System.out.println("dsbcsj");
 	   	ImageDetails imageDetails = new ImageDetails();
 	
@@ -166,9 +176,9 @@ public class AdminProductDetailsController {
 		imageDetails.setImageName(fileName);
 		
 		imageDetailsList.add(imageDetails);
-		
+	
 		System.out.println("Image Details" + imageDetailsList.toString());
-
+		
 		return imageDetailsList;
 
 	}

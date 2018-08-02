@@ -52,12 +52,16 @@ public class ProductDetails implements Serializable {
 	/** product weight */
 	@Column(name = "weight")
 	private float weight;
-	
-	
-
+		
 	/** product picture */
 	@Column(name = "image_id", length = 100)
 	private int imageId;
+	
+	@Column(name = "quantity", length = 100)
+	private int quantity;
+	
+	@Column(name = "size", length = 100)
+	private String size;
 	
 	/** product picture */
 	@Column(name = "note", length = 200)
@@ -88,6 +92,25 @@ public class ProductDetails implements Serializable {
 	/** extra string field */
 	@Column(name = "string_2", length = 100)
 	private String string2;
+
+	
+	
+	
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	public String getSize() {
+		return size;
+	}
+
+	public void setSize(String size) {
+		this.size = size;
+	}
 
 	public int getProdId() {
 		return prodId;
@@ -220,9 +243,12 @@ public class ProductDetails implements Serializable {
 	public String toString() {
 		return "ProductDetails [prodId=" + prodId + ", subCatId=" + subCatId + ", prodName=" + prodName + ", prodDesc="
 				+ prodDesc + ", price=" + price + ", discount=" + discount + ", weight=" + weight + ", imageId="
-				+ imageId + ", note=" + note + ", updatedDate=" + updatedDate + ", delStatus=" + delStatus + ", int1="
-				+ int1 + ", int2=" + int2 + ", string1=" + string1 + ", string2=" + string2 + "]";
+				+ imageId + ", quantity=" + quantity + ", size=" + size + ", note=" + note + ", updatedDate="
+				+ updatedDate + ", delStatus=" + delStatus + ", int1=" + int1 + ", int2=" + int2 + ", string1="
+				+ string1 + ", string2=" + string2 + "]";
 	}
+
+	
 
 
 }

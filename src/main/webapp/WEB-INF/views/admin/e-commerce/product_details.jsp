@@ -45,7 +45,13 @@
 									placeholder="Enter Category" name="note">
 
 							</div>
+							
+							<div class="form-group">
+								<label for="exampleInputFile">Size</label> <input type="text"
+									class="form-control" id="exampleInputEmail1"
+									placeholder="Enter Category" name="size">
 
+							</div>
 
 
 						</div>
@@ -86,9 +92,9 @@
 							</div>
 
 							<div class="form-group">
-								<label for="exampleInputFile">Update date</label> <input
+								<label for="exampleInputFile">Quantity</label> <input
 									type="text" class="form-control form_datetime top-space"
-									name="pregWomenObtainDate" name="updatedDate">
+									name="pregWomenObtainDate" name="quantity">
 							</div>
 
 							<div class="box-footer">
