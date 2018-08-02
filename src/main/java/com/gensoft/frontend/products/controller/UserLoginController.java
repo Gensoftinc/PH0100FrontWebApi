@@ -29,19 +29,17 @@ public class UserLoginController {
 
 	/**
 	 * TODO
-	 * 
 	 * @param req
 	 * @param res
 	 * @return
 	 */
-	@RequestMapping(value = "/showUserLogin", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView showUserLogin(HttpServletRequest req, HttpServletResponse res) {
 		return new ModelAndView("login/user_login");
 	}
 
 	/**
-	 * TODO
-	 * 
+	 * TODO 
 	 * @param req
 	 * @param res
 	 * @return
