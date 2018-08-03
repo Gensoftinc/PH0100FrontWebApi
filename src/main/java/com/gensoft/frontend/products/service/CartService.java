@@ -6,5 +6,5 @@ public interface CartService {
 	
 	public Cart insertProductsToCart(Cart cart);
 
-
+    public int deleteProductFromCart(int cartId);
 }

@@ -603,7 +603,7 @@ $(window).load(function() {
 		var productId=document.getElementById("productId").value;  
 	
 	    var qauntity=document.getElementById("qauntity").innerHTML;
-		
+		alert(qauntity);
 		 
 		 $ .getJSON(
 					'${addProductToCart}',
@@ -616,7 +616,7 @@ $(window).load(function() {
 					function(data) {
 				
 						
-						
+				window.open("${pageContext.request.contextPath}/showCartProductsOfUser","_self");		
 						 
 					})
 

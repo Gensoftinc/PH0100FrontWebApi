@@ -82,5 +82,18 @@ public class CartController {
 		model.addObject("productImageUrl", ImageUrl.PRODUCT_IMAGE_URL);
 		return model;
 	}
+	
+	@RequestMapping(value = "/deleteProductFromCart", method = RequestMethod.GET)
+	public @ResponseBody int deleteProductFromCart(HttpServletRequest req, HttpServletResponse res) 
+	{
+		
+		int cartId = Integer.parseInt(req.getParameter("cartId"));
+		int result;
+		
+		System.out.println("cartId:"+cartId);
+		result = cartService.deleteProductFromCart(cartId);
+
+		return result;
+	}
 
 }

@@ -33,6 +33,19 @@ public class CartServiceImp implements CartService{
 		}
 		return cart;
 	}
+	
+	@Override
+	public int deleteProductFromCart(int cartId) {
+		int res;
+		try {
+			res = cartRepository.deleteProductFRomCart(cartId);
+			System.out.println("res:"+res);
+		} catch (Exception e) {
+			LOGGER.error("Error while inserting the product category.", e);
+			throw new ApplicationException("Error while inserting the product category.", e);
+		}
+		return res;
+	}
 
 	
 	

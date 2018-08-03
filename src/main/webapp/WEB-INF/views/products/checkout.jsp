@@ -6,19 +6,20 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>New Shop a E-Commerce Online Shopping Category Flat Bootstrap Responsive Website Template | Products :: w3layouts</title>
-<!--css-->
-<link href="${pageContext.request.contextPath}/resources/css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
-<link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="${pageContext.request.contextPath}/resources/css/font-awesome.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/jquery-ui.css">
-<!--css-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="New Shop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <script src="${pageContext.request.contextPath}/resources/js/jquery.min.js"></script>
+<title>New Shop a E-Commerce Online Shopping Category Flat Bootstrap Responsive Website Template | Products :: w3layouts</title>
+<!--css-->
+<link href="${pageContext.request.contextPath}/resources/css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+
+<link href="${pageContext.request.contextPath}/resources/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/jquery-ui.css">
+<!--css-->
+
 <link href='//fonts.googleapis.com/css?family=Cagliostro' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,800italic,800,700italic,700,600italic,600,400italic,300italic,300' rel='stylesheet' type='text/css'>
 <!--search jQuery-->
@@ -30,9 +31,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
  <!-- cart -->
 <script src="${pageContext.request.contextPath}/resources/js/simpleCart.min.js"></script>
 <!-- cart -->
-  
+  <link href="${pageContext.request.contextPath}/resources/css/style.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
+<c:url var="deleteProductFromCart" value="/deleteProductFromCart" />
 	<!--header-->
 		
 		
@@ -47,9 +49,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!--banner-->
 
 	<!--content-->
+	
 		<div class="content">
 			<div class="cart-items">
+			
 				<div class="container">
+				<div class="row">
+				<div class="col-md-9">
 					 <h2>My Shopping Bag (3)</h2>
 						<script>$(document).ready(function(c) {
 							$('.close1').on('click', function(c){
@@ -61,27 +67,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					   </script>
 					    <c:forEach var="getCartProducts" items="${getCartProducts}">
 					 <div class="cart-header">
-						 <div class="close1"> </div>
+						 <!-- <div class="close1"> </div> -->
 						 <div class="cart-sec simpleCart_shelfItem">
 								<div class="cart-item cyc">
 									 <img src="${pageContext.request.contextPath}/resources/images/p15.jpg" class="img-responsive" alt="">
 								</div>
 							   <div class="cart-item-info">
-								<h3><a href="#"> ${getCartProducts.prodName} </a><span>Pickup time:</span></h3>
-								<ul class="qty">
-									<li><p>Price:${getCartProducts.price}</p></li>
-									<li><p>Size : ${getCartProducts.size}</p></li>
-								</ul>
+								<h3><a href="#"> ${getCartProducts.prodName} </a><span>Size : ${getCartProducts.size}</span><span>Price :₹ ${getCartProducts.price}Rs.</span></h3>
+								
 									 <div class="delivery">
 									 <p>Service Charges : $10.00</p>
-									 <span>Delivered in 1-1:30 hours</span>
+									 <span onclick="deleteItem(${getCartProducts.cartId})"><i class="glyphicon glyphicon-trash"></i>DELETE</span>
+									
 									 <div class="clearfix"></div>
-								</div>	
+									 	
+								</div>
+								<h3 class="text-right">
+								<p> Delivered in 1-1:30 hours</p>
+								</h3>	
 							   </div>
 							   <div class="clearfix"></div>
-													
+								<hr>				
 						  </div>
 					 </div>
+					 
+					 
 					 </c:forEach>
 					<%--  <script>$(document).ready(function(c) {
 							$('.close2').on('click', function(c){
@@ -139,11 +149,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									 <div class="clearfix"></div>
 								</div>	
 							   </div> --%>
-							   <div class="clearfix"></div>
+							  
+							   
 							</div>
-					</div>		
+							<div class="col-md-3 cartBill">
+							<p>ccndjchid</p>
+							
+							</div>
+								
 				</div>
-			</div>
+
 	<!-- checkout -->	
 		</div>
 					<!---footer--->
@@ -206,6 +221,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</div>
 				<!--copy-->
+				<script>
+				function deleteItem(cartId)
+				{
+					
+					alert(cartId);
+					 $ .getJSON(
+								'${deleteProductFromCart}',
+								{
+									cartId : cartId,
+																		
+									ajax : 'true'
+								},
+								function(data) {
+									alert(data);
+							if(data==1)
+								{
+								location.reload();
+								}
+							else{
+								alert("Failed!!!");
+							}	
+									 
+								})
+					
+				}
 				
+				</script>
 </body>
 </html>
