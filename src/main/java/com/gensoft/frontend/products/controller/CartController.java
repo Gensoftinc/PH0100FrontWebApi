@@ -69,6 +69,7 @@ public class CartController {
 		return cart;
 	}
 	
+	
 	@RequestMapping(value = "/showCartProductsOfUser", method = RequestMethod.GET)
 	public ModelAndView showCartProductsOfUser(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView model = new ModelAndView("products/checkout");
