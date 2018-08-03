@@ -89,7 +89,7 @@ $(window).load(function() {
 <body>
 
 <jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
-
+<c:url var="addProductToCart" value="/addProductToCart" />
 <!--banner-->
 		<div class="banner1">
 			<div class="container">
@@ -126,6 +126,7 @@ $(window).load(function() {
 									<div class="block">
 										<!-- <div class="starbox small ghosting"> </div> -->
 									</div>
+									<input type="hidden" id="productId" value="${productDetails.prodId}">
 									<p class="price item_price">Rs. ${productDetails.price}</p>
 									<div class="description">
 										<p><span>Quick Overview : </span> ${productDetails.prodDesc}.</p>
@@ -135,7 +136,7 @@ $(window).load(function() {
 											<div class="quantity"> 
 												<div class="quantity-select">                           
 													<div class="entry value-minus1">&nbsp;</div>
-													<div class="entry value1"><span>1</span></div>
+													<div class="entry value1"><span id="qauntity">1</span></div>
 													<div class="entry value-plus1 active">&nbsp;</div>
 												</div>
 											</div>
@@ -163,7 +164,7 @@ $(window).load(function() {
 			 		  
 			 		  </c:forEach>
 										 </span>
-										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+										<a href="#" data-text="Add To Cart" class="my-cart-b item_add" onclick="addToCart()">Add To Cart</a>
 									</div>
 									<div class="social-icon">
 										<a href="#"><i class="icon"></i></a>
@@ -549,7 +550,7 @@ $(window).load(function() {
 										<h6><a href="single.html">Sed ut perspiciatis unde</a></h6>
 										<span class="size">XL / XXL / S </span>
 										<p ><del>$100.00</del><em class="item_price">$70.00</em></p>
-										<a href="#" data-text="Add To Cart" class="my-cart-b item_add">Add To Cart</a>
+										<a href="#" data-text="Add To Cart" class="my-cart-b item_add" >Add To Cart</a>
 									</div>
 								</div>
 							</div>
@@ -560,6 +561,10 @@ $(window).load(function() {
 			<!--new-arrivals-->
 		</div>
 		<!--content-->
+		
+		
+		
+		
 		
 		<jsp:include page="/WEB-INF/views/include/footer.jsp"></jsp:include>
 		
@@ -577,5 +582,39 @@ $(window).load(function() {
 						</div>
 					</div>
 				<!--copy-->
+				
+				 <script>
+		 
+	 function addToCart() {
+										 
+		 
+		/*  var productId=document.getElementById("productId").value;  */
+		var productId =1;
+		alert(productId);
+		 var qauntity=document.getElementById("qauntity").innerText;
+		 alert(qauntity);
+		 
+		 $ .getJSON(
+					'${addProductToCart}',
+					{
+						productId : productId,
+						qauntity : qauntity,
+						
+						ajax : 'true'
+					},
+					function(data) {
+				
+						
+						
+						 
+					})
+
+
+}
+
+
+
+
+</script>
 </body>
 </html>
