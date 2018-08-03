@@ -127,6 +127,8 @@ $(window).load(function() {
 										<!-- <div class="starbox small ghosting"> </div> -->
 									</div>
 									<input type="hidden" id="productId" value="${productDetails.prodId}">
+									<input type="hidden" id="productQty" value="${productDetails.quantity}">
+									
 									<p class="price item_price">Rs. ${productDetails.price}</p>
 									<div class="description">
 										<p><span>Quick Overview : </span> ${productDetails.prodDesc}.</p>
@@ -143,8 +145,18 @@ $(window).load(function() {
 												<!--quantity-->
 														<script>
 														$('.value-plus1').on('click', function(){
+															var productQty = $( "#productQty" ).val();
+															
 															var divUpd = $(this).parent().find('.value1'), newVal = parseInt(divUpd.text(), 10)+1;
+															
+															if(productQty<newVal)
+																{
+																
+																}
+															else
+																{
 															divUpd.text(newVal);
+																}
 														});
 
 														$('.value-minus1').on('click', function(){
