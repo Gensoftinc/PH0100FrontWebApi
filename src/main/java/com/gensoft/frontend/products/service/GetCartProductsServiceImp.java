@@ -8,34 +8,35 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.gensoft.common.model.Cart;
 import com.gensoft.common.model.GetCartProducts;
+import com.gensoft.common.model.ProductCategory;
+import com.gensoft.common.repository.CartRepository;
 import com.gensoft.common.repository.GetCartProductsRepository;
 import com.gensoft.exception.ApplicationException;
 
-/**
- * TODO Insert comment here.
- * <p>
- * 
- * @author Amruta, (c) Copyright 2018 GenSoft, Inc. All Rights Reserved.
- */
 @Service
-public class GetCartProductsServiceImp implements GetCartProductsService {
-
+public class GetCartProductsServiceImp implements GetCartProductsService{
+	
 	/** LOGGER */
 	private static final Logger LOGGER = LoggerFactory.getLogger(GetCartProductsServiceImp.class);
-
+	
 	@Autowired
 	private GetCartProductsRepository getCartProductsRepository;
-
+	
+	
 	@Override
-	public List<GetCartProducts> getCartProductsOfUser(int userId) {
-		List<GetCartProducts> getCartProductsList = new ArrayList<>();
-		try {
+	public List<GetCartProducts> getCartProductsOfUser(int  userId) {
+		List<GetCartProducts> getCartProductsList = new ArrayList<GetCartProducts>();
+		
 			getCartProductsList = getCartProductsRepository.getCartProductsBYUserId(userId);
-		} catch (Exception e) {
-			LOGGER.error("Error while getting the cart product of user.", e);
-			throw new ApplicationException("Error while getting the cart product of user.", e);
-		}
+			for (GetCartProducts getCartProducts : getCartProductsList) {
+				
+				float price =getCartProducts.getPrice()*getCartProducts.getProductQuantity();
+				getCartProducts.setPrice(price);
+			}
+		System.out.println("reight:"+getCartProductsList.toString());
 		return getCartProductsList;
 	}
+
 }

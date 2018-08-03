@@ -53,10 +53,7 @@ public class GetCartProducts {
 	/** product weight */
 	@Column(name = "weight")
 	private float weight;
-		
-	/** product picture */
-	@Column(name = "image_id")
-	private int imageId;
+	
 	
 	@Column(name = "quantity")
 	private int quantity;
@@ -164,14 +161,7 @@ public class GetCartProducts {
 		this.weight = weight;
 	}
 
-	public int getImageId() {
-		return imageId;
-	}
-
-	public void setImageId(int imageId) {
-		this.imageId = imageId;
-	}
-
+	
 	public int getQuantity() {
 		return quantity;
 	}
@@ -217,8 +207,8 @@ public class GetCartProducts {
 		return "GetCartProducts [cartId=" + cartId + ", productId=" + productId + ", userId=" + userId
 				+ ", productQuantity=" + productQuantity + ", date=" + date + ", subCatId=" + subCatId + ", prodName="
 				+ prodName + ", prodDesc=" + prodDesc + ", price=" + price + ", discount=" + discount + ", weight="
-				+ weight + ", imageId=" + imageId + ", quantity=" + quantity + ", size=" + size + ", note=" + note
-				+ ", updatedDate=" + updatedDate + ", delStatus=" + delStatus + "]";
+				+ weight + ", quantity=" + quantity + ", size=" + size + ", note=" + note + ", updatedDate="
+				+ updatedDate + ", delStatus=" + delStatus + "]";
 	}
 
 	

@@ -78,7 +78,20 @@ public class CartController {
 		
 		System.out.println("getCartProductsgetCartProductsgetCartProducts:"+getCartProducts);
 		model.addObject("getCartProducts", getCartProducts);
+		float totalPrice=0;
+		int totalQty=0;
 		
+		
+		
+		for (GetCartProducts getCartProductss : getCartProducts) {
+			
+			totalPrice=totalPrice+getCartProductss.getPrice();
+			totalQty=totalQty+getCartProductss.getProductQuantity();
+		}
+		System.out.println("totalPrice:"+totalPrice+" "+totalQty);
+		model.addObject("totalPrice", totalPrice);
+		model.addObject("totalQty", totalQty);
+		model.addObject("getCartProducts", getCartProducts);
 		model.addObject("productImageUrl", ImageUrl.PRODUCT_IMAGE_URL);
 		return model;
 	}

@@ -128,8 +128,8 @@ $(window).load(function() {
 									</div>
 									<input type="hidden" id="productId" value="${productDetails.prodId}">
 									<input type="hidden" id="productQty" value="${productDetails.quantity}">
-									
-									<p class="price item_price">Rs. ${productDetails.price}</p>
+									<input type="hidden" id="price" value="${productDetails.price}">
+									<p class="price item_price" id="priceDisplay"> <span>Rs.</span>${productDetails.price}</p>
 									<div class="description">
 										<p><span>Quick Overview : </span> ${productDetails.prodDesc}.</p>
 									</div>
@@ -146,7 +146,8 @@ $(window).load(function() {
 														<script>
 														$('.value-plus1').on('click', function(){
 															var productQty = $( "#productQty" ).val();
-															
+															var price =  document.getElementById("price").value;
+															alert(price);
 															var divUpd = $(this).parent().find('.value1'), newVal = parseInt(divUpd.text(), 10)+1;
 															
 															if(productQty<newVal)
@@ -155,6 +156,8 @@ $(window).load(function() {
 																}
 															else
 																{
+																
+															document.getElementById("priceDisplay").innerHTML=price*newVal;
 															divUpd.text(newVal);
 																}
 														});
