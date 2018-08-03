@@ -1,4 +1,4 @@
-package com.gensoft.common.service;
+package com.gensoft.frontend.products.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,10 +15,10 @@ import com.gensoft.common.repository.GetCartProductsRepository;
 import com.gensoft.exception.ApplicationException;
 
 @Service
-public class GetCartProductsImp implements GetCartProductsService{
+public class GetCartProductsServiceImp implements GetCartProductsService{
 	
 	/** LOGGER */
-	private static final Logger LOGGER = LoggerFactory.getLogger(ProductCategoryServiceImpl.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(GetCartProductsServiceImp.class);
 	
 	@Autowired
 	private GetCartProductsRepository getCartProductsRepository;

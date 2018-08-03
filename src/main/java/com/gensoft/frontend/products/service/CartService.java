@@ -1,4 +1,4 @@
-package com.gensoft.common.service;
+package com.gensoft.frontend.products.service;
 
 import com.gensoft.common.model.Cart;
 
@@ -6,5 +6,5 @@ public interface CartService {
 	
 	public Cart insertProductsToCart(Cart cart);
 
-
+    public int deleteProductFromCart(int cartId);
 }

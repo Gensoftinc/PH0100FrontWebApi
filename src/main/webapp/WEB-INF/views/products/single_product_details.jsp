@@ -127,6 +127,8 @@ $(window).load(function() {
 										<!-- <div class="starbox small ghosting"> </div> -->
 									</div>
 									<input type="hidden" id="productId" value="${productDetails.prodId}">
+									<input type="hidden" id="productQty" value="${productDetails.quantity}">
+									
 									<p class="price item_price">Rs. ${productDetails.price}</p>
 									<div class="description">
 										<p><span>Quick Overview : </span> ${productDetails.prodDesc}.</p>
@@ -136,15 +138,25 @@ $(window).load(function() {
 											<div class="quantity"> 
 												<div class="quantity-select">                           
 													<div class="entry value-minus1">&nbsp;</div>
-													<div class="entry value1"><span id="qauntity">1</span></div>
+													<div class="entry value1" id="qauntity">1</div>
 													<div class="entry value-plus1 active">&nbsp;</div>
 												</div>
 											</div>
 												<!--quantity-->
 														<script>
 														$('.value-plus1').on('click', function(){
+															var productQty = $( "#productQty" ).val();
+															
 															var divUpd = $(this).parent().find('.value1'), newVal = parseInt(divUpd.text(), 10)+1;
+															
+															if(productQty<newVal)
+																{
+																
+																}
+															else
+																{
 															divUpd.text(newVal);
+																}
 														});
 
 														$('.value-minus1').on('click', function(){
@@ -588,11 +600,10 @@ $(window).load(function() {
 	 function addToCart() {
 										 
 		 
-		/*  var productId=document.getElementById("productId").value;  */
-		var productId =1;
-		alert(productId);
-		 var qauntity=document.getElementById("qauntity").innerText;
-		 alert(qauntity);
+		var productId=document.getElementById("productId").value;  
+	
+	    var qauntity=document.getElementById("qauntity").innerHTML;
+		alert(qauntity);
 		 
 		 $ .getJSON(
 					'${addProductToCart}',
@@ -605,7 +616,7 @@ $(window).load(function() {
 					function(data) {
 				
 						
-						
+				window.open("${pageContext.request.contextPath}/showCartProductsOfUser","_self");		
 						 
 					})
 

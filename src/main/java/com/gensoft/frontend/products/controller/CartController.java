@@ -26,8 +26,8 @@ import com.gensoft.common.model.Cart;
 import com.gensoft.common.model.GetCartProducts;
 import com.gensoft.common.model.ProductCategory;
 import com.gensoft.common.model.ProductDetails;
-import com.gensoft.common.service.CartService;
-import com.gensoft.common.service.GetCartProductsService;
+import com.gensoft.frontend.products.service.CartService;
+import com.gensoft.frontend.products.service.GetCartProductsService;
 import com.gensoft.frontend.products.service.ProductDetailsService;
 import com.gensoft.rest.constant.ImageUrl;
 
@@ -81,6 +81,19 @@ public class CartController {
 		
 		model.addObject("productImageUrl", ImageUrl.PRODUCT_IMAGE_URL);
 		return model;
+	}
+	
+	@RequestMapping(value = "/deleteProductFromCart", method = RequestMethod.GET)
+	public @ResponseBody int deleteProductFromCart(HttpServletRequest req, HttpServletResponse res) 
+	{
+		
+		int cartId = Integer.parseInt(req.getParameter("cartId"));
+		int result;
+		
+		System.out.println("cartId:"+cartId);
+		result = cartService.deleteProductFromCart(cartId);
+
+		return result;
 	}
 
 }

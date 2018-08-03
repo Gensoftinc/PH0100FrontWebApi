@@ -1,4 +1,4 @@
-package com.gensoft.common.service;
+package com.gensoft.frontend.products.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -17,7 +17,7 @@ import com.gensoft.exception.ApplicationException;
 public class CartServiceImp implements CartService{
 	
 	/** LOGGER */
-	private static final Logger LOGGER = LoggerFactory.getLogger(ProductCategoryServiceImpl.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(CartServiceImp.class);
 	
 	@Autowired
 	private CartRepository cartRepository;
@@ -32,6 +32,19 @@ public class CartServiceImp implements CartService{
 			throw new ApplicationException("Error while inserting the product category.", e);
 		}
 		return cart;
+	}
+	
+	@Override
+	public int deleteProductFromCart(int cartId) {
+		int res;
+		try {
+			res = cartRepository.deleteProductFRomCart(cartId);
+			System.out.println("res:"+res);
+		} catch (Exception e) {
+			LOGGER.error("Error while inserting the product category.", e);
+			throw new ApplicationException("Error while inserting the product category.", e);
+		}
+		return res;
 	}
 
 	
