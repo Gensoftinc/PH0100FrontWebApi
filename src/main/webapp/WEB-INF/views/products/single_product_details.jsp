@@ -136,7 +136,7 @@ $(window).load(function() {
 											<div class="quantity"> 
 												<div class="quantity-select">                           
 													<div class="entry value-minus1">&nbsp;</div>
-													<div class="entry value1"><span id="qauntity">1</span></div>
+													<div class="entry value1" id="qauntity">1</div>
 													<div class="entry value-plus1 active">&nbsp;</div>
 												</div>
 											</div>
@@ -588,11 +588,10 @@ $(window).load(function() {
 	 function addToCart() {
 										 
 		 
-		/*  var productId=document.getElementById("productId").value;  */
-		var productId =1;
-		alert(productId);
-		 var qauntity=document.getElementById("qauntity").innerText;
-		 alert(qauntity);
+		var productId=document.getElementById("productId").value;  
+	
+	    var qauntity=document.getElementById("qauntity").innerHTML;
+		
 		 
 		 $ .getJSON(
 					'${addProductToCart}',

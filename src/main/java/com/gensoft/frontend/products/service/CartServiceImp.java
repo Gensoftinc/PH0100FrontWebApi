@@ -1,4 +1,4 @@
-package com.gensoft.common.service;
+package com.gensoft.frontend.products.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -17,7 +17,7 @@ import com.gensoft.exception.ApplicationException;
 public class CartServiceImp implements CartService{
 	
 	/** LOGGER */
-	private static final Logger LOGGER = LoggerFactory.getLogger(ProductCategoryServiceImpl.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(CartServiceImp.class);
 	
 	@Autowired
 	private CartRepository cartRepository;
