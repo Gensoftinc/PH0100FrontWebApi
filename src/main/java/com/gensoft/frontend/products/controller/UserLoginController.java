@@ -12,6 +12,7 @@ import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.gensoft.common.model.User;
+import com.gensoft.common.model.UserLogin;
 import com.gensoft.service.UserLoginService;
 
 /**
@@ -50,7 +51,11 @@ public class UserLoginController {
 	public String userLoginProcess(HttpServletRequest req, HttpServletResponse res) {
 		String email = req.getParameter("email");
 		String password = req.getParameter("password");
-		userLoginService.getUserDetailsByEmailAndDeleted(email, password, 0);
-		return "redirect:/showProductsHome";
+		User user=userLoginService.getUserDetailsByEmailAndDeleted(email, password, 0);
+		String ret="showProductsHome";
+		if(user.getUserId()==1) {
+			ret="showCategoryDetails";
+		}
+		return "redirect:/"+ret;
 	}
 }
