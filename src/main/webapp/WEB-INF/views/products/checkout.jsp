@@ -73,7 +73,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									 <img src="${pageContext.request.contextPath}/resources/images/p15.jpg" class="img-responsive" alt="">
 								</div>
 							   <div class="cart-item-info">
-								<h3><a href="#"> ${getCartProducts.prodName} </a><span>Size : ${getCartProducts.size}</span><span>Price :₹ ${getCartProducts.price}Rs.</span></h3>
+								<h3><a href="#"> ${getCartProducts.prodName} </a><span>Size : ${getCartProducts.size}</span><span>Price :₹ ${getCartProducts.price}</span></h3>
 								
 									 <div class="delivery">
 									 <p>Service Charges : $10.00</p>
@@ -153,7 +153,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							   
 							</div>
 							<div class="col-md-3 cartBill">
-							<p>ccndjchid</p>
+							<div class="order-summary">
+							<h3>Order Summary</h3>
+							<div class="price">
+							Price(${totalQty} item)<strong>₹${totalPrice}</strong>
+							
+							</div>
+							<div class="price">
+							Delivery Charges<strong>₹40</strong>
+							
+							</div>
+							<div class="clearfix"></div>
+							<hr>
+							<a href="#" data-text="Add To Cart" class="my-cart-b item_add" onclick="addToCart()">Add To Cart</a>
+							
+							</div>
 							
 							</div>
 								

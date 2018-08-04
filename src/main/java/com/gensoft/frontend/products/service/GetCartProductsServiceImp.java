@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.gensoft.common.model.Cart;
 import com.gensoft.common.model.GetCartProducts;
+import com.gensoft.common.model.ProductCategory;
 import com.gensoft.common.repository.CartRepository;
 import com.gensoft.common.repository.GetCartProductsRepository;
 import com.gensoft.exception.ApplicationException;
@@ -27,12 +28,14 @@ public class GetCartProductsServiceImp implements GetCartProductsService{
 	@Override
 	public List<GetCartProducts> getCartProductsOfUser(int  userId) {
 		List<GetCartProducts> getCartProductsList = new ArrayList<GetCartProducts>();
-		try {
+		
 			getCartProductsList = getCartProductsRepository.getCartProductsBYUserId(userId);
-		} catch (Exception e) {
-			LOGGER.error("Error while inserting the product category.", e);
-			throw new ApplicationException("Error while inserting the product category.", e);
-		}
+			for (GetCartProducts getCartProducts : getCartProductsList) {
+				
+				float price =getCartProducts.getPrice()*getCartProducts.getProductQuantity();
+				getCartProducts.setPrice(price);
+			}
+		System.out.println("reight:"+getCartProductsList.toString());
 		return getCartProductsList;
 	}
 
