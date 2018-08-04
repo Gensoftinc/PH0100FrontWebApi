@@ -17,7 +17,7 @@
                       <label for="exampleInputEmail1">Category Name</label>
                       <input type="text" class="form-control" id="" name="catName" placeholder="Enter Category">
                     </div>
-                   
+                    
                     <div class="form-group">
                       <label>Category Description</label>
                       <textarea class="form-control" rows="3" name="catDesc" placeholder="Enter Category Description"></textarea>

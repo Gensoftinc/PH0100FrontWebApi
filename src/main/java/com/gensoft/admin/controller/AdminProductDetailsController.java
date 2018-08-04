@@ -1,5 +1,7 @@
 package com.gensoft.admin.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,17 +10,22 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
+import org.springframework.web.multipart.support.DefaultMultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.gensoft.common.model.FileUpload;
 import com.gensoft.common.model.ImageDetails;
 import com.gensoft.common.model.ProductCategory;
 import com.gensoft.common.model.ProductDetails;
 import com.gensoft.common.model.ProductSubCategory;
+import com.gensoft.common.repository.ImageDetailsRepository;
 import com.gensoft.common.service.ProductCategoryService;
 import com.gensoft.common.service.ProductSubCategoryService;
 import com.gensoft.frontend.products.service.ProductDetailsService;
@@ -39,14 +46,14 @@ public class AdminProductDetailsController {
 
 	@Autowired
 	ProductDetailsService productDetailsService;
-	
+
 	List<ImageDetails> imageDetailsList;
 
 	@RequestMapping(value = "/showCategoryDetails", method = RequestMethod.GET)
 	public ModelAndView showCategoryDetails(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView model = new ModelAndView("admin/e-commerce/add_product_category");
-		List<ProductCategory> productCategoryList = new ArrayList<ProductCategory>();
-		productCategoryList = productCategoryService.getAllCategory(0);
+
+		List<ProductCategory> productCategoryList = productCategoryService.getAllCategory(0);
 
 		model.addObject("productCategoryList", productCategoryList);
 		return model;
@@ -70,18 +77,17 @@ public class AdminProductDetailsController {
 	@RequestMapping(value = "/showProductDetails", method = RequestMethod.GET)
 	public ModelAndView showProductDetails(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView model = new ModelAndView("admin/e-commerce/product_details");
-		List<ProductSubCategory> productSubCategoryList = new ArrayList<ProductSubCategory>();
-		productSubCategoryList = productSubCategoryService.getAllSubCategory(0);
-		imageDetailsList=new ArrayList<ImageDetails>();
+		// productSubCategoryList = new ArrayList<ProductSubCategory>();
+		List<ProductSubCategory> productSubCategoryList = productSubCategoryService.getAllSubCategory(0);
+		imageDetailsList = new ArrayList<ImageDetails>();
 		model.addObject("productSubCategoryList", productSubCategoryList);
 		return model;
 	}
 
 	@RequestMapping(value = "/showAllProduct", method = RequestMethod.GET)
 	public ModelAndView showAllProduct(HttpServletRequest req, HttpServletResponse res) {
-		ModelAndView model = new ModelAndView("admin/e-commerce/show_products");
 
-		return model;
+		return new ModelAndView("admin/e-commerce/show_products");
 	}
 
 	@RequestMapping(value = "/submitProductCategory", method = RequestMethod.POST)
@@ -135,50 +141,58 @@ public class AdminProductDetailsController {
 	 * @return
 	 */
 	@RequestMapping(value = "/submitProducts", method = RequestMethod.POST)
-	public ModelAndView submitProducts(HttpServletRequest req, HttpServletResponse res) {
-		ProductDetails productDetails = new ProductDetails();
-
+	public ModelAndView submitProducts(HttpServletRequest req, HttpServletResponse res,
+			@ModelAttribute ProductDetails productDetails) {
+		 List<MultipartFile> files = productDetails.getPicture();
+		 String fileName;
+		 
+		  if (null != files && files.size() > 0)
+	        {
+	            for (MultipartFile multipartFile : files) {
+	            	 ImageDetails imageDetails=new ImageDetails();
+	                fileName = multipartFile.getOriginalFilename();
+	                imageDetails.setImageName(fileName);
+	                
+	                imageDetailsList.add(imageDetails);
+	      
+	            }
+	        }
+		  
+		  System.out.println(imageDetailsList.toString());
+		  
 		ModelAndView model = new ModelAndView("admin/e-commerce/product_details");
 		productDetails.setProdName(req.getParameter("prodName"));
 		productDetails.setSubCatId(Integer.parseInt(req.getParameter("subCatId")));
 		productDetails.setProdDesc(req.getParameter("prodDesc"));
 		productDetails.setNote(req.getParameter("note"));
 		productDetails.setDiscount(Integer.parseInt(req.getParameter("discount")));
-		productDetails.setImageId(Integer.parseInt(req.getParameter("imageId")));
+		//productDetails.setImageId(Integer.parseInt(req.getParameter("picture")));
 		productDetails.setPrice(Integer.parseInt(req.getParameter("price")));
 		productDetails.setWeight(Integer.parseInt(req.getParameter("weight")));
 		productDetails.setQuantity(Integer.parseInt(req.getParameter("quantity")));
 		productDetails.setSize(req.getParameter("size"));
-		
-		// productDetails.setUpdatedDate(req.getParameter("updatedDate"));
+		productDetails.setImageDetailsList(imageDetailsList);
+		productDetails=productDetailsService.insertProduct(productDetails);
 
-		productDetails = productDetailsService.insertProduct(productDetails);
-		int prodId=productDetails.getProdId();
-		for(int i=0;i<imageDetailsList.size();i++) {
-		imageDetailsList.get(i).setProductId(prodId);
-		}
-		System.out.println("Image List"+imageDetailsList);
-		imageDetailsList=productDetailsService.insertImages(imageDetailsList);
-		
+	//	imageDetailsList=productDetailsService.insertImages(imageDetailsList);
+
 		return model;
 	}
-	
+
 	@RequestMapping(value = "/addImagesInList", method = RequestMethod.GET)
-	public @ResponseBody List<ImageDetails> addImagesInList(HttpServletRequest request, 
-			HttpServletResponse response) {
-		
-		
+	public @ResponseBody List<ImageDetails> addImagesInList(HttpServletRequest request, HttpServletResponse response) {
+
 		System.out.println("dsbcsj");
-	   	ImageDetails imageDetails = new ImageDetails();
-	
+		ImageDetails imageDetails = new ImageDetails();
+
 		String fileName = request.getParameter("fileName");
-		System.out.println("cdcc"+fileName);
+		System.out.println("cdcc" + fileName);
 		imageDetails.setImageName(fileName);
-		
+
 		imageDetailsList.add(imageDetails);
-	
+
 		System.out.println("Image Details" + imageDetailsList.toString());
-		
+
 		return imageDetailsList;
 
 	}

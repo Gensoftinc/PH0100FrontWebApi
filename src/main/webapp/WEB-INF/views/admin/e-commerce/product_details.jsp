@@ -8,7 +8,7 @@
 	<section class="content">
 		<div class="row">
 			<!-- form start -->
-			<form role="form">
+			<form action="${pageContext.request.contextPath}/submitProducts" method="post" enctype="multipart/form-data">
 				<div class="col-md-6">
 					<div class="box box-primary">
 						<div class="box-header with-border">
@@ -71,11 +71,12 @@
 							</div>
 
 							<div class="form-group">
-								<label for="exampleInputFile">Product Image</label> <a
+								<!-- <label for="exampleInputFile">Product Image</label> <a
 									href="#myModal" class="btn btn-info top-space"
-									data-toggle="modal">Add Product Images</a> <!-- <input
-									type="button" class="form-control" id="exampleInputEmail1"
-									placeholder="Enter Category" name="picture"> -->
+									data-toggle="modal">Add Product Images</a> -->
+									<label for="exampleInputFile">Product Images</label>
+									 <input type="file" class="form-control" id="exampleInputEmail1"
+									placeholder="Enter Category" name="picture" multiple>
 							</div>
 
 
@@ -93,8 +94,8 @@
 
 							<div class="form-group">
 								<label for="exampleInputFile">Quantity</label> <input
-									type="text" class="form-control form_datetime top-space"
-									name="pregWomenObtainDate" name="quantity">
+									type="text" class="form-control top-space"
+									 name="quantity">
 							</div>
 
 							<div class="box-footer">
@@ -107,10 +108,10 @@
 			</form>
 
 
-			<div id="myModal" class="modal fade">
+			<%-- <div id="myModal" class="modal fade">
 				<div class="modal-dialog">
 					<div class="modal-content">
-						<%-- <form action="${pageContext.request.contextPath}/savePndtChildrenDetails"> --%>
+						<form action="${pageContext.request.contextPath}/savePndtChildrenDetails">
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal"
 								aria-hidden="true">&times;</button>
@@ -160,7 +161,7 @@
 				</script>
 					</div>
 				</div>
-			</div>
+			</div> --%>
 			<jsp:include page="../../admin-include/footer.jsp"></jsp:include>
 			<script type="text/javascript">
  
