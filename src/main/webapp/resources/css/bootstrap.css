@@ -1253,7 +1253,7 @@ pre code {
     width: 91.66666667%;
   }
   .col-lg-10 {
-    width: 83.33333333%;
+    width: 98.33333333%;
   }
   .col-lg-9 {
     width: 75%;
@@ -5823,3 +5823,7 @@ button.close {
     margin-left: 101px;
 }
 
+.referal_sec p {font-size: 16px; font-weight: 500; text-transform:inherit;}
+.detls_input input {width: 100%; border: solid 1px #ccc !important; padding: 10px; margin: 0; font-weight: 500 !important;}
+.detls_input .col-sm-4, .detls_input .col-sm-3, .detls_input .col-sm-1 {padding: 0}
+.referal_sec .col-sm-3 {padding: 0}
