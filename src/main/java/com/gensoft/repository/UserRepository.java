@@ -12,4 +12,6 @@ import com.gensoft.common.model.User;
 public interface UserRepository extends JpaRepository<User, Long> {
 
 	public User findByEmailAndDeleted(String email, int deleted);
+	
+	public User save(User user);
 }

@@ -53,6 +53,36 @@ public class User {
 
 	@Column(name = "email", length = 100)
 	private String email;
+	
+	/** User address */
+	@Column(name = "address", length = 250)
+	private String address;
+	
+	/**  user pin code */
+	@Column(name = "pin_code")
+	private int pinCode;
+	
+	/**  payment Status */
+	@Column(name = "payment_status")
+	private int paymentStatus;
+	
+	
+	/**  referred by code */
+	@Column(name = "referred_by", length = 50, nullable=true)
+	private String referredBy;
+	
+	/** user referral code */
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "referral_code", length = 50, unique = true)
+	private String referralCode;
+	
+	/** user contact no */
+	@Column(name = "contact_no", length = 50)
+	private String contactNo;
+	
+	/** user  Aadhar no */
+	@Column(name = "aadhar_no", length = 50, unique = true)
+	private String aadharNo;
 
 	/** Last modified date */
 	@LastModifiedDate
@@ -81,10 +111,7 @@ public class User {
 		return createDate;
 	}
 
-	public void setCreateDate(Date createDate) {
-		this.createDate = createDate;
-	}
-
+	 
 	public String getFirstName() {
 		return firstName;
 	}
@@ -121,9 +148,7 @@ public class User {
 		return lastModifiedDate;
 	}
 
-	public void setLastModifiedDate(Date lastModifiedDate) {
-		this.lastModifiedDate = lastModifiedDate;
-	}
+	 
 
 	public String getPasswordHash() {
 		return passwordHash;
@@ -149,11 +174,72 @@ public class User {
 		this.deleted = deleted;
 	}
 
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public int getPinCode() {
+		return pinCode;
+	}
+
+	public void setPinCode(int pinCode) {
+		this.pinCode = pinCode;
+	}
+
+	public int getPaymentStatus() {
+		return paymentStatus;
+	}
+
+	public void setPaymentStatus(int paymentStatus) {
+		this.paymentStatus = paymentStatus;
+	}
+
+	public String getReferredBy() {
+		return referredBy;
+	}
+
+	public void setReferredBy(String referredBy) {
+		this.referredBy = referredBy;
+	}
+
+	public String getReferralCode() {
+		return referralCode;
+	}
+
+	public void setReferralCode(String referralCode) {
+		this.referralCode = referralCode;
+	}
+
+	public String getContactNo() {
+		return contactNo;
+	}
+
+	public void setContactNo(String contactNo) {
+		this.contactNo = contactNo;
+	}
+
+	public String getAadharNo() {
+		return aadharNo;
+	}
+
+	public void setAadharNo(String aadharNo) {
+		this.aadharNo = aadharNo;
+	}
+
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", createDate=" + createDate + ", firstName=" + firstName + ", middleName="
-				+ middleName + ", lastName=" + lastName + ", email=" + email + ", lastModifiedDate=" + lastModifiedDate
-				+ ", passwordHash=" + passwordHash + ", deleted=" + deleted + ", status=" + status + "]";
+				+ middleName + ", lastName=" + lastName + ", email=" + email + ", address=" + address + ", pinCode="
+				+ pinCode + ", paymentStatus=" + paymentStatus + ", referredBy=" + referredBy + ", referralCode="
+				+ referralCode + ", contactNo=" + contactNo + ", aadharNo=" + aadharNo + ", lastModifiedDate="
+				+ lastModifiedDate + ", passwordHash=" + passwordHash + ", deleted=" + deleted + ", status=" + status
+				+ "]";
 	}
+
+	 
 
 }
