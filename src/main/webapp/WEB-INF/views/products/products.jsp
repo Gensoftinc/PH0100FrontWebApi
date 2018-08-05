@@ -54,13 +54,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 	<!--header-->
 	<!--banner-->
-	<div class="banner1">
+	<!-- <div class="banner1">
 		<div class="container">
 			<h3>
 				<a href="index.html">Home</a> / <span>Products</span>
 			</h3>
 		</div>
-	</div>
+	</div> -->
 	<!--banner-->
 	<!--content-->
 	<div class="content">

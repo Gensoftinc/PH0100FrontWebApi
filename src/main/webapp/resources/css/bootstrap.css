@@ -338,7 +338,7 @@ hr {
   margin-top: 20px;
   margin-bottom: 20px;
   border: 0;
-  border-top: 1px solid none;
+  border-top: 2px solid #ccc;
 }
 .sr-only {
   position: absolute;
@@ -5782,4 +5782,44 @@ button.close {
     display: none !important;
   }
 }
+.cartBill{
+	border: solid 1px #000 !important;
+	float: left !important;
+	min-height: 400px;
+	padding:20px;
+}
+.text-right{
+	text-align: right !important; 
+	    margin-top: -128px;
+}
+.price{
+	display: -webkit-flex;
+	justify-content: space-between;
+}
 /*# sourceMappingURL=bootstrap.css.map */
+.g2dDAR {
+    padding-right: 16px;
+}
+.g2dDAR ._2hqjdd {
+    
+    
+   
+    padding-right: 10px;
+    float: left;
+    
+    font-size: 1.1em;
+    color: #000;
+    font-weight: bold;
+	font-family: 'Cagliostro', sans-serif;
+}
+.g2dDAR ._3WHvuP ._2-riNZ {
+    color: #212121;
+    padding: 0 0 8px 16px;
+    position: relative;
+}
+.g2dDAR ._3WHvuP {
+    
+    flex: 1;
+    margin-left: 101px;
+}
+

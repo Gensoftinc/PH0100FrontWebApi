@@ -91,11 +91,11 @@ $(window).load(function() {
 <jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
 <c:url var="addProductToCart" value="/addProductToCart" />
 <!--banner-->
-		<div class="banner1">
+		<!-- <div class="banner1">
 			<div class="container">
 				<h3><a href="index.html">Home</a> / <span>Single</span></h3>
 			</div>
-		</div>
+		</div> -->
 	<!--banner-->
 
 	<!--content-->
@@ -129,12 +129,12 @@ $(window).load(function() {
 									<input type="hidden" id="productId" value="${productDetails.prodId}">
 									<input type="hidden" id="productQty" value="${productDetails.quantity}">
 									<input type="hidden" id="price" value="${productDetails.price}">
-									<p class="price item_price" id="priceDisplay"> <span>Rs.</span>${productDetails.price}</p>
+									<p id="priceDisplay"> <span>Rs</span>${productDetails.price}</p>
 									<div class="description">
 										<p><span>Quick Overview : </span> ${productDetails.prodDesc}.</p>
 									</div>
 									<div class="color-quality">
-										<h6>Quality :</h6>
+										<h6>Quantity :</h6>
 											<div class="quantity"> 
 												<div class="quantity-select">                           
 													<div class="entry value-minus1">&nbsp;</div>
@@ -147,7 +147,7 @@ $(window).load(function() {
 														$('.value-plus1').on('click', function(){
 															var productQty = $( "#productQty" ).val();
 															var price =  document.getElementById("price").value;
-															alert(price);
+															
 															var divUpd = $(this).parent().find('.value1'), newVal = parseInt(divUpd.text(), 10)+1;
 															
 															if(productQty<newVal)
@@ -164,11 +164,19 @@ $(window).load(function() {
 
 														$('.value-minus1').on('click', function(){
 															var divUpd = $(this).parent().find('.value1'), newVal = parseInt(divUpd.text(), 10)-1;
-															if(newVal>=1) divUpd.text(newVal);
+															if(newVal>=1)
+															{
+																var price =  document.getElementById("price").value;
+																document.getElementById("priceDisplay").innerHTML=price*newVal;
+																divUpd.text(newVal);
+																
+															}
 														});
 														</script>
 													<!--quantity-->
 									</div>
+									
+										
 									<div class="women">
 										<span class="size">
 										
@@ -181,12 +189,21 @@ $(window).load(function() {
 										 </span>
 										<a href="#" data-text="Add To Cart" class="my-cart-b item_add" onclick="addToCart()">Add To Cart</a>
 									</div>
+									
 									<div class="social-icon">
 										<a href="#"><i class="icon"></i></a>
 										<a href="#"><i class="icon1"></i></a>
 										<a href="#"><i class="icon2"></i></a>
 										<a href="#"><i class="icon3"></i></a>
 									</div>
+									</br>
+									<div class="g2dDAR flex"><div class="_2hqjdd">Highlights</div><div class="_3WHvuP">
+									<ul><li class="_2-riNZ">Fabric: Cotton</li>
+									<li class="_2-riNZ">Occasion: Casual</li>
+									<li class="_2-riNZ">Pattern: Striped</li>
+									<li class="_2-riNZ">Color: Black</li>
+									<li class="_2-riNZ">Sleeve Style: Cap Sleeve</li>
+									<li class="_2-riNZ">Style: Straight</li></ul></div></div>
 								</div>
 								<div class="clearfix"> </div>
 							</div>
@@ -606,8 +623,7 @@ $(window).load(function() {
 		var productId=document.getElementById("productId").value;  
 	
 	    var qauntity=document.getElementById("qauntity").innerHTML;
-		alert(qauntity);
-		 
+	
 		 $ .getJSON(
 					'${addProductToCart}',
 					{

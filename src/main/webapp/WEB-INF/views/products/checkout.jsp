@@ -41,11 +41,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<jsp:include page="/WEB-INF/views/include/header.jsp"></jsp:include>
 		
 		<!--header-->
-		<div class="banner1">
+		<!-- <div class="banner1">
 			<div class="container">
 				<h3><a href="index.html">Home</a> / <span>Checkout</span></h3>
 			</div>
-		</div>
+		</div> -->
 	<!--banner-->
 
 	<!--content-->
@@ -165,7 +165,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							<div class="clearfix"></div>
 							<hr>
-							<a href="#" data-text="Add To Cart" class="my-cart-b item_add" onclick="addToCart()">Add To Cart</a>
+							<a href="#" data-text="Add To Cart" class="my-cart-b item_add set" onclick="addToCart()" >Checkout</a>
 							
 							</div>
 							

@@ -28,6 +28,7 @@ h1,h2,h3,h4,h5,h6{
 p{
 	padding:0 0;
 	margin:0 0;
+	
 }
 ul{
 	padding:0 0;
@@ -76,15 +77,16 @@ body{
     float: right;
 }
 .heder-bottom {
-    padding: 1em 0;
-	background: #0d59af;
+    padding: 0.0em 0;
+	background: #fff;
+	border-bottom: solid 1px #ccc;
 }
 .logo-nav-left{
 	float:left;
 }
 .logo-nav-left h1 a{
 	font-size:1.5em;
-	color:#fff;
+	color:#4c1818;
 	text-decoration:none;
 }
 .logo-nav-left h1 a span{
@@ -109,10 +111,10 @@ body{
 	font-weight: 600;
 }
 .navbar-default .navbar-nav > li > a {
-    color: #fff;
+    color: #000;
 }
 .logo-nav-left1 ul li.active a.act{
-	color:#fff !important;
+	color:#000 !important;
 }
 .multi-column-dropdown li a {
     color: #999 !important;
@@ -724,6 +726,7 @@ a:focus {
 a.my-cart-b {
     text-decoration: none;
 }
+
 .my-cart-b {
     background: none;
     text-decoration: none;
@@ -732,6 +735,10 @@ a.my-cart-b {
     border: 2px solid #F19E1F;
     padding: 0.5em 1em;
     outline: none;
+    
+}
+.set{
+	width:100%;
 }
 /* Sweep To Bottom */
 .my-cart-b{
@@ -1741,17 +1748,19 @@ h2.typoh2{
 }
 .single-grid h4 {
     font-size: 2em;
-    color: #222;
+    color: #A9A9A9;
 	margin-bottom: 0.5em;
 }
-.description p {
-    font-size: 1em;
-    line-height: 1.8em;
-    color: #777;
-}
+
 .description span {
+    font-size: 1.1em;
+    color: #000;
+    font-weight: bold;
+	font-family: 'Cagliostro', sans-serif;
+}
+#priceDisplay{
     font-size: 1.2em;
-    color: #f19e1f;
+    color: #000;
     font-weight: bold;
 	font-family: 'Cagliostro', sans-serif;
 }
@@ -2147,11 +2156,11 @@ h3.account-text{
 .cart-item{
 	width:20%;
 	float:left;
-	margin-right:5%;
+	margin-right:-8%;
 	
 }
 .cart-item img{
-	width:100%;
+	width:51%;
 }
 .cart-item-info{
 	width:75%;
@@ -2171,7 +2180,7 @@ h3.account-text{
 .cart-item-info h3 span{
 	display:block;
 	font-weight:400;
-	font-size: 0.85em;
+	font-size: 1.00em;
   margin: 0.7em 0;
 }
 .size_3 {
@@ -2224,6 +2233,7 @@ h3.account-text{
 }
 .cart-header {  
   position: relative;  
+      width: 86%;
 }
 .cart-header2 {  
   position: relative;  
@@ -3416,4 +3426,7 @@ h3.tittle1, h3.tittle {
     top: 132px;
     right: 85%;
 }
+.checkout{
+	width: 100%;
+	
 }
