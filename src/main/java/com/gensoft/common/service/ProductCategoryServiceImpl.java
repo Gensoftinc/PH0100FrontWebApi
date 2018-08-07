@@ -17,6 +17,7 @@ import com.gensoft.exception.ApplicationException;
 /**
  * TODO Insert class comment here.
  * <p>
+ * 
  * @author Author name, (c) Copyright 2018 GenSoft, Inc. All Rights Reserved.
  */
 @Service
@@ -36,7 +37,7 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
 
 	@Override
 	public List<ProductCategory> getAllCategory(int delStatus) {
-		List<ProductCategory> productCategoryList = new ArrayList<ProductCategory>();
+		List<ProductCategory> productCategoryList = new ArrayList<>();
 		try {
 			productCategoryList = productCategoryRepository.findByDelStatus(delStatus);
 		} catch (Exception e) {
@@ -59,12 +60,12 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
 
 	@Override
 	public List<ProductCategory> getAllProductCatecoryWithSubCategory(int delStatus) {
-		List<ProductCategory> productCategoryList = new ArrayList<>();
-		productCategoryList = productCategoryRepository.findByDelStatus(delStatus);
+		List<ProductCategory> productCategoryList = productCategoryRepository.findByDelStatus(delStatus);
 
 		for (ProductCategory productCategory : productCategoryList) {
 			try {
-				// TODO list will contain only last product category's sub category only. fix it.
+				// TODO list will contain only last product category's sub category only. fix
+				// it.
 				productSubCategoryList = productSubCategoryRepository
 						.findByCatIdAndDelStatus(productCategory.getCatId(), delStatus);
 			} catch (Exception e) {

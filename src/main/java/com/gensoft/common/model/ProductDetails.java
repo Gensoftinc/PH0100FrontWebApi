@@ -38,7 +38,7 @@ public class ProductDetails implements Serializable {
 	@Column(name = "prod_name", length = 100)
 	private String prodName;
 
-	/** product desc */
+	/** product description */
 	@Column(name = "prod_desc", length = 500)
 	private String prodDesc;
 
@@ -57,7 +57,7 @@ public class ProductDetails implements Serializable {
 	/** product picture */
 	@Transient
 	private List<MultipartFile> picture;
-	
+
 	@Transient
 	private List<ImageDetails> imageDetailsList;
 
@@ -96,8 +96,6 @@ public class ProductDetails implements Serializable {
 	@Column(name = "string_2", length = 100)
 	private String string2;
 
-	
-	
 	public List<ImageDetails> getImageDetailsList() {
 		return imageDetailsList;
 	}
@@ -255,7 +253,4 @@ public class ProductDetails implements Serializable {
 				+ ", int2=" + int2 + ", string1=" + string1 + ", string2=" + string2 + "]";
 	}
 
-	
-
-	
 }

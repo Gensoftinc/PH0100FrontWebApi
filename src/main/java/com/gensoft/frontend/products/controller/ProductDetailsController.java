@@ -1,6 +1,5 @@
 package com.gensoft.frontend.products.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -23,7 +22,7 @@ import com.gensoft.common.service.ProductCategoryService;
 import com.gensoft.exception.ApplicationException;
 import com.gensoft.frontend.products.model.ProductColorSize;
 import com.gensoft.frontend.products.service.ProductDetailsService;
-import com.gensoft.rest.constant.ImageUrl;;
+import com.gensoft.rest.constant.ImageUrl;
 
 /**
  * TODO Insert class comment here.
@@ -75,8 +74,7 @@ public class ProductDetailsController {
 			HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView model = new ModelAndView("products/products");
 		model.addObject("productCategoryList", getProductCategoryList());
-		List<ProductDetails> productDetailsList = new ArrayList<>();
-		productDetailsList = productDetailsService.getProductBySubCatId(subCatId);
+		List<ProductDetails> productDetailsList = productDetailsService.getProductBySubCatId(subCatId);
 		model.addObject("productDetailsList", productDetailsList);
 		model.addObject("subCatName", subCatName);
 		model.addObject("productImageUrl", ImageUrl.PRODUCT_IMAGE_URL);
@@ -88,10 +86,9 @@ public class ProductDetailsController {
 			HttpServletResponse res) {
 		ModelAndView model = new ModelAndView("products/single_product_details");
 		LOGGER.info("product Id is {}.", productId);
-		ProductDetails productDetails = new ProductDetails();
-		productDetails = productDetailsService.getProductDetailsByProductId(productId, 0);
-		List<ProductColorSize> productColorSizeList = new ArrayList<>();
-		productColorSizeList = productDetailsService.getProductColorSizeQtyByProductId(productId, 0);
+		ProductDetails productDetails = productDetailsService.getProductDetailsByProductId(productId, 0);
+		List<ProductColorSize> productColorSizeList = productDetailsService.getProductColorSizeQtyByProductId(productId,
+				0);
 		model.addObject("productDetails", productDetails);
 		model.addObject("productColorSizeList", productColorSizeList);
 		return model;

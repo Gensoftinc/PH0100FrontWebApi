@@ -1,7 +1,6 @@
 package com.gensoft.common.model;
 
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,26 +13,25 @@ import javax.persistence.TemporalType;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.web.multipart.MultipartFile;
 
 @Entity
-@Table(name="image_details")
+@Table(name = "image_details")
 public class ImageDetails {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="image_id")
+	@Column(name = "image_id")
 	int imageId;
-	
-	@Column(name="product_id")
+
+	@Column(name = "product_id")
 	int productId;
-	
-	@Column(name="image_name")
+
+	@Column(name = "image_name")
 	private String imageName;
-	
-	@Column(name="type")
+
+	@Column(name = "type")
 	int type;
-	
+
 	/** Row deleted */
 	@Column(name = "deleted")
 	private int deleted;
@@ -48,8 +46,6 @@ public class ImageDetails {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date lastModifiedDate;
 
-	
-	
 	public String getImageName() {
 		return imageName;
 	}
@@ -74,7 +70,6 @@ public class ImageDetails {
 		this.productId = productId;
 	}
 
-	
 	public int getType() {
 		return type;
 	}
@@ -113,13 +108,5 @@ public class ImageDetails {
 				+ type + ", deleted=" + deleted + ", creationDate=" + creationDate + ", lastModifiedDate="
 				+ lastModifiedDate + "]";
 	}
-
-	
-
-		
-	
-	
-	
-	
 
 }

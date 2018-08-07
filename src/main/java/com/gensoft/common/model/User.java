@@ -53,34 +53,33 @@ public class User {
 
 	@Column(name = "email", length = 100)
 	private String email;
-	
+
 	/** User address */
 	@Column(name = "address", length = 250)
 	private String address;
-	
-	/**  user pin code */
+
+	/** user pin code */
 	@Column(name = "pin_code")
 	private int pinCode;
-	
-	/**  payment Status */
+
+	/** payment Status */
 	@Column(name = "payment_status")
 	private int paymentStatus;
-	
-	
-	/**  referred by code */
-	@Column(name = "referred_by", length = 50, nullable=true)
+
+	/** referred by code */
+	@Column(name = "referred_by", length = 50, nullable = true)
 	private String referredBy;
-	
+
 	/** user referral code */
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "referral_code", length = 50, unique = true)
 	private String referralCode;
-	
+
 	/** user contact no */
 	@Column(name = "contact_no", length = 50)
 	private String contactNo;
-	
-	/** user  Aadhar no */
+
+	/** user Aadhar no */
 	@Column(name = "aadhar_no", length = 50, unique = true)
 	private String aadharNo;
 
@@ -111,7 +110,6 @@ public class User {
 		return createDate;
 	}
 
-	 
 	public String getFirstName() {
 		return firstName;
 	}
@@ -147,8 +145,6 @@ public class User {
 	public Date getLastModifiedDate() {
 		return lastModifiedDate;
 	}
-
-	 
 
 	public String getPasswordHash() {
 		return passwordHash;
@@ -239,7 +235,4 @@ public class User {
 				+ lastModifiedDate + ", passwordHash=" + passwordHash + ", deleted=" + deleted + ", status=" + status
 				+ "]";
 	}
-
-	 
-
 }

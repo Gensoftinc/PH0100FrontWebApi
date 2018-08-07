@@ -7,6 +7,7 @@ import com.gensoft.common.model.ProductCategory;
 /**
  * TODO Insert class comment here.
  * <p>
+ * 
  * @author Author name, (c) Copyright 2018 GenSoft, Inc. All Rights Reserved.
  */
 public interface ProductCategoryService {

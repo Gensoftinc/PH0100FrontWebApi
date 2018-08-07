@@ -6,10 +6,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.gensoft.common.model.ProductCategory;
 
-public interface ProductCategoryRepository extends JpaRepository<ProductCategory, Long>{
+public interface ProductCategoryRepository extends JpaRepository<ProductCategory, Long> {
 
-	
 	List<ProductCategory> findByDelStatus(int delStatus);
-	
-	ProductCategory save(ProductCategory productCategory); 
+
+	ProductCategory save(ProductCategory productCategory);
 }

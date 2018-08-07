@@ -49,14 +49,15 @@ public class CartServiceImp implements CartService {
 		}
 		return res;
 	}
+
 	@Override
-	public int updateQuantityOfCart(int cartId,int newVal) {
+	public int updateQuantityOfCart(int cartId, int newVal) {
 		int res;
 		try {
-			res = cartRepository.updateQuantityOfCart(cartId,newVal);
+			res = cartRepository.updateQuantityOfCart(cartId, newVal);
 		} catch (Exception e) {
-			LOGGER.error("Error while deleting the product from cart.", e);
-			throw new ApplicationException("Error while deleting the product from cart.", e);
+			LOGGER.error("Error while updating quantity of cart.", e);
+			throw new ApplicationException("Error while updating quantity of cart.", e);
 		}
 		return res;
 	}

@@ -15,6 +15,7 @@ import com.gensoft.exception.ApplicationException;
 /**
  * TODO Insert class comment here.
  * <p>
+ * 
  * @author Author name, (c) Copyright 2018 GenSoft, Inc. All Rights Reserved.
  */
 @Service
@@ -22,7 +23,7 @@ public class ProductSubCategoryServiceImpl implements ProductSubCategoryService 
 
 	/** LOGGER */
 	private static final Logger LOGGER = LoggerFactory.getLogger(ProductSubCategoryServiceImpl.class);
-	
+
 	@Autowired
 	private ProductSubCategoryRepository productSubCategoryRepository;
 
@@ -39,8 +40,7 @@ public class ProductSubCategoryServiceImpl implements ProductSubCategoryService 
 
 	@Override
 	public List<ProductSubCategory> getAllSubCategory(int delStatus) {
-
-		List<ProductSubCategory> productSubCategoryList = new ArrayList<ProductSubCategory>();
+		List<ProductSubCategory> productSubCategoryList = new ArrayList<>();
 		try {
 			productSubCategoryList = productSubCategoryRepository.findByDelStatus(delStatus);
 		} catch (Exception e) {

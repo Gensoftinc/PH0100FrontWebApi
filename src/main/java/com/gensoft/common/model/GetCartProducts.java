@@ -7,41 +7,38 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 @Entity
 public class GetCartProducts {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "cart_id")
 	private int cartId;
-	
+
 	@Column(name = "product_id")
 	private int productId;
-	
+
 	@Column(name = "user_id")
 	private int userId;
-	
+
 	@Column(name = "product_quantity")
 	private int productQuantity;
-	
+
 	@Column(name = "date")
 	private String date;
-	
-	
+
 	@Column(name = "sub_cat_id")
 	private int subCatId;
 
 	/** product name */
 	@Column(name = "prod_name")
 	private String prodName;
-	
+
 	/** product desc */
 	@Column(name = "prod_desc")
 	private String prodDesc;
-	
+
 	/** product Price */
 	@Column(name = "price")
 	private float price;
@@ -49,25 +46,23 @@ public class GetCartProducts {
 	/** product weight */
 	@Column(name = "discount")
 	private float discount;
-	
+
 	/** product weight */
 	@Column(name = "weight")
 	private float weight;
-	
-	
+
 	@Column(name = "quantity")
 	private int quantity;
-	
+
 	@Column(name = "size")
 	private String size;
-	
+
 	@Column(name = "note")
 	private String note;
-	
-	
+
 	@Column(name = "updated_date")
 	private Date updatedDate;
-	
+
 	/** Active status */
 	@Column(name = "del_status")
 	private int delStatus;
@@ -112,7 +107,6 @@ public class GetCartProducts {
 		this.date = date;
 	}
 
-	
 	public int getSubCatId() {
 		return subCatId;
 	}
@@ -161,7 +155,6 @@ public class GetCartProducts {
 		this.weight = weight;
 	}
 
-	
 	public int getQuantity() {
 		return quantity;
 	}
@@ -210,7 +203,5 @@ public class GetCartProducts {
 				+ weight + ", quantity=" + quantity + ", size=" + size + ", note=" + note + ", updatedDate="
 				+ updatedDate + ", delStatus=" + delStatus + "]";
 	}
-
-	
 
 }

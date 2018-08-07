@@ -21,7 +21,7 @@ import com.gensoft.service.UserSignUpService;
  * TODO Insert class comment here.
  * <p>
  * 
- * @author Author name Ganesh, (c) Copyright 2018 GenSoft, Inc. All Rights Reserved.
+ * @author Ganesh P, (c) Copyright 2018 GenSoft, Inc. All Rights Reserved.
  */
 @Controller
 @Scope(WebApplicationContext.SCOPE_SESSION)
@@ -32,20 +32,19 @@ public class UserDetailsController {
 
 	@Autowired
 	UserSignUpService userSignUpService;
-	
-	
+
 	@RequestMapping(value = "/showUserSignUp", method = RequestMethod.GET)
 	public ModelAndView showUserSignUp(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView model = new ModelAndView("user_signup");
 		model.addObject("referralCode", req.getParameter("referral_code"));
 		return model;
 	}
+
 	@RequestMapping(value = "/submitUserSignUp", method = RequestMethod.POST)
 	public String submitUserSignUp(HttpServletRequest req, HttpServletResponse res) {
-		 
-		
-		User user=new User();
-		
+
+		User user = new User();
+
 		user.setAadharNo(req.getParameter("aadhar_no"));
 		user.setAddress(req.getParameter("address"));
 		user.setContactNo(req.getParameter("contact_no"));
@@ -56,9 +55,8 @@ public class UserDetailsController {
 		user.setPasswordHash(req.getParameter("password"));
 		user.setPinCode(Integer.parseInt(req.getParameter("pin_code")));
 		user.setReferredBy(req.getParameter("referred_by"));
-		
+
 		userSignUpService.signUpUser(user);
 		return "redirect:/";
 	}
-	
 }

@@ -1,7 +1,5 @@
 package com.gensoft.common.model;
 
-
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,42 +8,42 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="product_sub_category")
+@Table(name = "product_sub_category")
 public class ProductSubCategory {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="sub_cat_id")
+	@Column(name = "sub_cat_id")
 	private int subCatId;
-	
-	@Column(name="cat_id")
+
+	@Column(name = "cat_id")
 	private int catId;
-	
-	@Column(name="sub_cat_desc")
+
+	@Column(name = "sub_cat_desc")
 	private String subCatDesc;
-	
-	@Column(name="sub_cat_name")
+
+	@Column(name = "sub_cat_name")
 	private String subCatName;
-	
-	@Column(name="sub_cat_image")
+
+	@Column(name = "sub_cat_image")
 	private String subCatImage;
-	
-	@Column(name="del_status")
+
+	@Column(name = "del_status")
 	private int delStatus;
-	
-	@Column(name="type")
+
+	@Column(name = "type")
 	private int type;
-	
-	@Column(name="int_1")
+
+	@Column(name = "int_1")
 	private int int1;
-	
-	@Column(name="int_2")
+
+	@Column(name = "int_2")
 	private int int2;
-	
-	@Column(name="string_1")
+
+	@Column(name = "string_1")
 	private String string1;
-	
-	@Column(name="string_2")
+
+	@Column(name = "string_2")
 	private String string2;
 
 	public int getSubCatId() {
@@ -142,7 +140,4 @@ public class ProductSubCategory {
 				+ ", subCatName=" + subCatName + ", subCatImage=" + subCatImage + ", delStatus=" + delStatus + ", type="
 				+ type + ", int1=" + int1 + ", int2=" + int2 + ", string1=" + string1 + ", string2=" + string2 + "]";
 	}
-	
-	
-
 }

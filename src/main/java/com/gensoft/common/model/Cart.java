@@ -1,40 +1,33 @@
 package com.gensoft.common.model;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "cart")
-
 public class Cart {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "cart_id")
 	private int cartId;
-	
+
 	@Column(name = "product_id")
 	private int productId;
-	
+
 	@Column(name = "user_id")
 	private int userId;
-	
+
 	@Column(name = "product_quantity")
 	private int productQuantity;
-	
-	@Column(name="del_status")
+
+	@Column(name = "del_status")
 	private int delStatus;
-	
+
 	@Column(name = "date")
 	private String date;
 
@@ -78,7 +71,6 @@ public class Cart {
 		this.date = date;
 	}
 
-	
 	public int getDelStatus() {
 		return delStatus;
 	}
@@ -92,8 +84,4 @@ public class Cart {
 		return "Cart [cartId=" + cartId + ", productId=" + productId + ", userId=" + userId + ", productQuantity="
 				+ productQuantity + ", delStatus=" + delStatus + ", date=" + date + "]";
 	}
-
-	
-	
-
 }
