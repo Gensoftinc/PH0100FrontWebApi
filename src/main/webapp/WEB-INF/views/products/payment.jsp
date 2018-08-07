@@ -119,19 +119,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       <div id="collapse2" class="panel-collapse collapse">
         <div class="panel-body">
       <div class="_3llGqN">
-      <div class="uK6xOa"><div class="_3fgAI3 Th26Zc"><input type="text" class="_16qL6K _366U7Q" name="name" required="" autocomplete="name" tabindex="1" value="Kaushik Udavant"><label for="name" class="_20i8vs _3CMTvd">Name</label>
+      <div class="uK6xOa"><div class="_3fgAI3 Th26Zc"><input type="text" class="_16qL6K _366U7Q" name="name" required="" autocomplete="name" tabindex="1" value="Amruta"><label for="name" class="_20i8vs _3CMTvd">Name</label>
       </div>
-      <div class="_3fgAI3 Th26Zc"><input type="text" class="_16qL6K _366U7Q" name="phone" required="" maxlength="10" autocomplete="tel" tabindex="2" value="9823875548"><label for="phone" class="_20i8vs _3CMTvd">10-digit mobile number</label></div></div>
-    <div class="uK6xOa"><div class="_3fgAI3 Th26Zc"><input type="text" class="_16qL6K _366U7Q" name="name" required="" autocomplete="name" tabindex="1" value="Kaushik Udavant"><label for="name" class="_20i8vs _3CMTvd">Name</label>
+      <div class="_3fgAI3 Th26Zc"><input type="text" class="_16qL6K _366U7Q" name="phone" required="" maxlength="10" autocomplete="tel" tabindex="2" value="7420983910"><label for="phone" class="_20i8vs _3CMTvd">10-digit mobile number</label></div></div>
+    <div class="uK6xOa"><div class="_3fgAI3 Th26Zc"><input type="text" class="_16qL6K _366U7Q" name="name" required="" autocomplete="name" tabindex="1" value="Amruta"><label for="name" class="_20i8vs _3CMTvd">Name</label>
       </div>
-      <div class="_3fgAI3 Th26Zc"><input type="text" class="_16qL6K _366U7Q" name="phone" required="" maxlength="10" autocomplete="tel" tabindex="2" value="9823875548"><label for="phone" class="_20i8vs _3CMTvd">10-digit mobile number</label></div></div>
+      <div class="_3fgAI3 Th26Zc"><input type="text" class="_16qL6K _366U7Q" name="phone" required="" maxlength="10" autocomplete="tel" tabindex="2" value="7420983910"><label for="phone" class="_20i8vs _3CMTvd">10-digit mobile number</label></div></div>
      <div class="uK6xOa _3g_m0J"><div class="_1X5WZZ _1QG_7g"><div class="_2mJu7M Th26Zc"><textarea class="giyiJa _16qL6K _21icXK" name="addressLine1" rows="4" cols="10" tabindex="5" required="" autocomplete="street-address">3</textarea><label for="addressLine1" class="_20i8vs _3CMTvd">Address (Area and Street)</label></div><div class="_39_KcN _3-mqeJ"></div></div></div>
-     <div class="uK6xOa"><div class="_3fgAI3 Th26Zc"><input type="text" class="_16qL6K _366U7Q" name="name" required="" autocomplete="name" tabindex="1" value="Kaushik Udavant"><label for="name" class="_20i8vs _3CMTvd">Name</label>
+     <div class="uK6xOa"><div class="_3fgAI3 Th26Zc"><input type="text" class="_16qL6K _366U7Q" name="name" required="" autocomplete="name" tabindex="1" value="Amruta"><label for="name" class="_20i8vs _3CMTvd">Name</label>
       </div>
-      <div class="_3fgAI3 Th26Zc"><input type="text" class="_16qL6K _366U7Q" name="phone" required="" maxlength="10" autocomplete="tel" tabindex="2" value="9823875548"><label for="phone" class="_20i8vs _3CMTvd">10-digit mobile number</label></div></div>
-     <div class="uK6xOa"><div class="_3fgAI3 Th26Zc"><input type="text" class="_16qL6K _366U7Q" name="name" required="" autocomplete="name" tabindex="1" value="Kaushik Udavant"><label for="name" class="_20i8vs _3CMTvd">Name</label>
+      <div class="_3fgAI3 Th26Zc"><input type="text" class="_16qL6K _366U7Q" name="phone" required="" maxlength="10" autocomplete="tel" tabindex="2" value="7420983910"><label for="phone" class="_20i8vs _3CMTvd">10-digit mobile number</label></div></div>
+     <div class="uK6xOa"><div class="_3fgAI3 Th26Zc"><input type="text" class="_16qL6K _366U7Q" name="name" required="" autocomplete="name" tabindex="1" value="Amrutat"><label for="name" class="_20i8vs _3CMTvd">Name</label>
       </div>
-      <div class="_3fgAI3 Th26Zc"><input type="text" class="_16qL6K _366U7Q" name="phone" required="" maxlength="10" autocomplete="tel" tabindex="2" value="9823875548"><label for="phone" class="_20i8vs _3CMTvd">10-digit mobile number</label></div></div>
+      <div class="_3fgAI3 Th26Zc"><input type="text" class="_16qL6K _366U7Q" name="phone" required="" maxlength="10" autocomplete="tel" tabindex="2" value="7420983910"><label for="phone" class="_20i8vs _3CMTvd">10-digit mobile number</label></div></div>
       </div>
       <!-- address type -->
       <div class="_3XXwRR"><p class="_2dwzAy">Address Type</p><div class="_3qg3HS"><div><label for="HOME" class="_8J-bZE _2tcMoY _1Icwrf"><input type="radio" class="_2haq-9" name="locationTypeTag" readonly="" id="HOME" value="on"><div class="_6ATDKp"></div><div class="_2o59RR"><span>Home (All day delivery)</span></div></label><label for="WORK" class="_8J-bZE _2tcMoY"><input type="radio" class="_2haq-9" name="locationTypeTag" readonly="" id="WORK" value="on"><div class="_6ATDKp"></div><div class="_2o59RR"><span>Work (Delivery between 10 AM - 5 PM)</span></div></label></div></div></div>
