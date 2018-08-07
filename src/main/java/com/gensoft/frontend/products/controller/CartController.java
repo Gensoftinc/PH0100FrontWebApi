@@ -35,7 +35,7 @@ import com.gensoft.rest.constant.ImageUrl;
  * TODO Insert class comment here.
  * <p>
  * 
- * @author Author name, (c) Copyright 2018 GenSoft, Inc. All Rights Reserved.
+ * @author Author name Aparamaje, (c) Copyright 2018 GenSoft, Inc. All Rights Reserved.
  */
 @Controller
 @Scope(WebApplicationContext.SCOPE_SESSION)
@@ -54,8 +54,6 @@ public class CartController {
 	public @ResponseBody Cart addProductToCart(HttpServletRequest req, HttpServletResponse res) 
 	{
 		Cart cart = new Cart();
-
-		ModelAndView model = new ModelAndView("admin/e-commerce/add_product_category");
 
 		cart.setProductId(Integer.parseInt(req.getParameter("productId")));
 		cart.setProductQuantity(Integer.parseInt(req.getParameter("qauntity")));
@@ -109,4 +107,56 @@ public class CartController {
 		return result;
 	}
 
+	@RequestMapping(value = "/updateQuantityInCart", method = RequestMethod.GET)
+	public @ResponseBody int updateQuantityInCart(HttpServletRequest req, HttpServletResponse res) 
+	{
+		
+		int cartId = Integer.parseInt(req.getParameter("cartId"));
+		int newVal = Integer.parseInt(req.getParameter("newVal"));
+		int result;
+		
+		System.out.println("cartId:"+cartId);
+		result = cartService.updateQuantityOfCart(cartId,newVal);
+
+		return result;
+	}
+
+	@RequestMapping(value = "/showRefferencePage", method = RequestMethod.GET)
+	public ModelAndView showRefferencePage(HttpServletRequest req, HttpServletResponse res) 
+	{
+		
+		ModelAndView model = new ModelAndView("products/refference_page");
+
+
+		return model;
+	}
+	
+	@RequestMapping(value = "/showPaymentPage", method = RequestMethod.GET)
+	public ModelAndView showPaymentPage(HttpServletRequest req, HttpServletResponse res) 
+	{
+		
+		ModelAndView model = new ModelAndView("products/payment");
+		List<GetCartProducts> getCartProducts = new ArrayList<GetCartProducts>();
+		getCartProducts = getCartProductsService.getCartProductsOfUser(1);///hardcoded
+		
+		System.out.println("getCartProductsgetCartProductsgetCartProducts:"+getCartProducts);
+		model.addObject("getCartProducts", getCartProducts);
+		float totalPrice=0;
+		int totalQty=0;
+		
+		
+		
+		for (GetCartProducts getCartProductss : getCartProducts) {
+			
+			totalPrice=totalPrice+getCartProductss.getPrice();
+			totalQty=totalQty+getCartProductss.getProductQuantity();
+		}
+		System.out.println("totalPrice:"+totalPrice+" "+totalQty);
+		model.addObject("totalPrice", totalPrice);
+		model.addObject("totalQty", totalQty);
+		model.addObject("getCartProducts", getCartProducts);
+		model.addObject("productImageUrl", ImageUrl.PRODUCT_IMAGE_URL);
+
+		return model;
+	}
 }

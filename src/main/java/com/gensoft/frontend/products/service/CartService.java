@@ -23,4 +23,11 @@ public interface CartService {
 	 * @return
 	 */
     public int deleteProductFromCart(int cartId);
+    
+    /**
+	 * TODO insert comment here
+	 * @param cartId
+	 * @return
+	 */
+    public int updateQuantityOfCart(int cartId,int newVal);
 }

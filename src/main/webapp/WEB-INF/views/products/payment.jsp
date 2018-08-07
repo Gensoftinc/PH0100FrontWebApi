@@ -57,16 +57,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="container">
 				<div class="row">
 				<div class="col-md-9">
-					 <h2>My Shopping Bag (${totalQty})</h2>
-						<script>$(document).ready(function(c) {
-							$('.close1').on('click', function(c){
-								$('.cart-header').fadeOut('slow', function(c){
-									$('.cart-header').remove();
-								});
-								});	  
-							});
-					   </script>
-					    <c:forEach var="getCartProducts" items="${getCartProducts}">
+					
+							<div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Order Summary</a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse in">
+        <div class="panel-body">
+       <c:forEach var="getCartProducts" items="${getCartProducts}">
 					 <div class="cart-header">
 						 <!-- <div class="close1"> </div> -->
 						 <div class="cart-sec simpleCart_shelfItem">
@@ -86,36 +87,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 													<div class="entry value-plus1 active" onclick="plus(${getCartProducts.cartId})">&nbsp;</div>
 												</div>
 											</div>
-												<!--quantity-->
-														<!-- <script>
-														$('.value-plus1').on('click', function(){
-															var productQty = $( "#productQty" ).val();
-															
-															var divUpd = $(this).parent().find('.value1'), newVal = parseInt(divUpd.text(), 10)+1;
-															
-															if(productQty<newVal)
-																{
-																
-																}
-															else
-																{
-																
-															
-															divUpd.text(newVal);
-																}
-														});
-
-														$('.value-minus1').on('click', function(){
-															var divUpd = $(this).parent().find('.value1'), newVal = parseInt(divUpd.text(), 10)-1;
-															if(newVal>=1)
-															{
-																
-																divUpd.text(newVal);
-																
-															}
-														});
-														</script> -->
-													<!--quantity-->
+												
 									</div>
 									 <div class="delivery">
 									 <p>Service Charges : $10.00</p>
@@ -135,65 +107,69 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					 
 					 
 					 </c:forEach>
-					<%--  <script>$(document).ready(function(c) {
-							$('.close2').on('click', function(c){
-									$('.cart-header2').fadeOut('slow', function(c){
-								$('.cart-header2').remove();
-							});
-							});	  
-							});
-					 </script>
-					<div class="cart-header2">
-						 <div class="close2"> </div>
-						  <div class="cart-sec simpleCart_shelfItem">
-								<div class="cart-item cyc">
-									 <img src="${pageContext.request.contextPath}/resources/images/s1.jpg" class="img-responsive" alt="">
-								</div>
-							   <div class="cart-item-info">
-								<h3><a href="#"> Lorem Ipsum is not simply </a><span>Pickup time:</span></h3>
-								<ul class="qty">
-									<li><p>Min. order value:</p></li>
-									<li><p>FREE delivery</p></li>
-								</ul>
-									 <div class="delivery">
-									 <p>Service Charges : $10.00</p>
-									 <span>Delivered in 1-1:30 hours</span>
-									 <div class="clearfix"></div>
-								</div>	
-							   </div>
-							   <div class="clearfix"></div>
-													
-						  </div>
-					  </div>
-					  <script>$(document).ready(function(c) {
-							$('.close3').on('click', function(c){
-									$('.cart-header3').fadeOut('slow', function(c){
-								$('.cart-header3').remove();
-							});
-							});	  
-							});
-					 </script>
-					<div class="cart-header3">
-						 <div class="close3"> </div>
-							<div class="cart-sec simpleCart_shelfItem">
-								<div class="cart-item cyc">
-									 <img src="${pageContext.request.contextPath}/resources/images/i7.jpg" class="img-responsive" alt="">
-								</div>
-							   <div class="cart-item-info">
-								<h3><a href="#"> Lorem Ipsum is not simply </a><span>Pickup time:</span></h3>
-								<ul class="qty">
-									<li><p>Min. order value:</p></li>
-									<li><p>FREE delivery</p></li>
-								</ul>
-									 <div class="delivery">
-									 <p>Service Charges : $10.00</p>
-									 <span>Delivered in 1-1:30 hours</span>
-									 <div class="clearfix"></div>
-								</div>	
-							   </div> --%>
-							  
-							   
-							</div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Delivery Address</a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">
+      <div class="_3llGqN">
+      <div class="uK6xOa"><div class="_3fgAI3 Th26Zc"><input type="text" class="_16qL6K _366U7Q" name="name" required="" autocomplete="name" tabindex="1" value="Kaushik Udavant"><label for="name" class="_20i8vs _3CMTvd">Name</label>
+      </div>
+      <div class="_3fgAI3 Th26Zc"><input type="text" class="_16qL6K _366U7Q" name="phone" required="" maxlength="10" autocomplete="tel" tabindex="2" value="9823875548"><label for="phone" class="_20i8vs _3CMTvd">10-digit mobile number</label></div></div>
+    <div class="uK6xOa"><div class="_3fgAI3 Th26Zc"><input type="text" class="_16qL6K _366U7Q" name="name" required="" autocomplete="name" tabindex="1" value="Kaushik Udavant"><label for="name" class="_20i8vs _3CMTvd">Name</label>
+      </div>
+      <div class="_3fgAI3 Th26Zc"><input type="text" class="_16qL6K _366U7Q" name="phone" required="" maxlength="10" autocomplete="tel" tabindex="2" value="9823875548"><label for="phone" class="_20i8vs _3CMTvd">10-digit mobile number</label></div></div>
+     <div class="uK6xOa _3g_m0J"><div class="_1X5WZZ _1QG_7g"><div class="_2mJu7M Th26Zc"><textarea class="giyiJa _16qL6K _21icXK" name="addressLine1" rows="4" cols="10" tabindex="5" required="" autocomplete="street-address">3</textarea><label for="addressLine1" class="_20i8vs _3CMTvd">Address (Area and Street)</label></div><div class="_39_KcN _3-mqeJ"></div></div></div>
+     <div class="uK6xOa"><div class="_3fgAI3 Th26Zc"><input type="text" class="_16qL6K _366U7Q" name="name" required="" autocomplete="name" tabindex="1" value="Kaushik Udavant"><label for="name" class="_20i8vs _3CMTvd">Name</label>
+      </div>
+      <div class="_3fgAI3 Th26Zc"><input type="text" class="_16qL6K _366U7Q" name="phone" required="" maxlength="10" autocomplete="tel" tabindex="2" value="9823875548"><label for="phone" class="_20i8vs _3CMTvd">10-digit mobile number</label></div></div>
+     <div class="uK6xOa"><div class="_3fgAI3 Th26Zc"><input type="text" class="_16qL6K _366U7Q" name="name" required="" autocomplete="name" tabindex="1" value="Kaushik Udavant"><label for="name" class="_20i8vs _3CMTvd">Name</label>
+      </div>
+      <div class="_3fgAI3 Th26Zc"><input type="text" class="_16qL6K _366U7Q" name="phone" required="" maxlength="10" autocomplete="tel" tabindex="2" value="9823875548"><label for="phone" class="_20i8vs _3CMTvd">10-digit mobile number</label></div></div>
+      </div>
+      <!-- address type -->
+      <div class="_3XXwRR"><p class="_2dwzAy">Address Type</p><div class="_3qg3HS"><div><label for="HOME" class="_8J-bZE _2tcMoY _1Icwrf"><input type="radio" class="_2haq-9" name="locationTypeTag" readonly="" id="HOME" value="on"><div class="_6ATDKp"></div><div class="_2o59RR"><span>Home (All day delivery)</span></div></label><label for="WORK" class="_8J-bZE _2tcMoY"><input type="radio" class="_2haq-9" name="locationTypeTag" readonly="" id="WORK" value="on"><div class="_6ATDKp"></div><div class="_2o59RR"><span>Work (Delivery between 10 AM - 5 PM)</span></div></label></div></div></div>
+      <a href="#" data-text="Add To Cart" class="my-cart-b item_add set" onclick="addToCart()" >Checkout</a>
+      
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Payment</a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">
+         <input type='radio' id='r11' name='occupation' value='Working' required /> credid/debit
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"></a>
+              
+               <div id="collapseOne" class="panel-collapse collapse in">
+        
+          <p>HTML stands for HyperText Markup Language. HTML is the main markup language for describing the structure of Web pages. <a href="http://www.tutorialrepublic.com/html-tutorial/" target="_blank">Learn more.</a></p>
+              </div>
+       <input type='radio' id='r12' name='occupation' value='Not-Working' required /> Net Banking
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"></a>
+              
+              <div id="collapseTwo" class="panel-collapse collapse">
+    
+          <p>Bootstrap is a powerful front-end framework for faster and easier web development. It is a collection of CSS and HTML conventions. <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank">Learn more.</a></p>
+  
+      </div>
+              
+              
+        </div>
+      </div>
+    </div>
+  </div> 						
+	</div>																 							
 							<div class="col-md-3 cartBill">
 							<div class="order-summary">
 							<h3>Order Summary</h3>
@@ -212,11 +188,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							
 							</div>
-								
+							</div>	
 				</div>
+</div>
+</div>
 
 	<!-- checkout -->	
-		</div>
+		
 					<!---footer--->
 					<div class="footer-w3l">
 						<div class="container">
@@ -263,6 +241,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							
 						</div>
 					</div>
+					
+					
 					<!---footer--->
 					<!--copy-->
 					<div class="copy-section">
@@ -276,113 +256,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="clearfix"></div>
 						</div>
 					</div>
+					
 				<!--copy-->
-				<script>
-				function deleteItem(cartId)
-				{
-					
-					alert(cartId);
-					 $ .getJSON(
-								'${deleteProductFromCart}',
-								{
-									cartId : cartId,
-																		
-									ajax : 'true'
-								},
-								function(data) {
-									alert(data);
-							if(data==1)
-								{
-								location.reload();
-								}
-							else{
-								alert("Failed!!!");
-							}	
-									 
-								})
-					
-				}
-				
-				
-				</script>
-				
-				<script>
-														function plus(catId){
-															
-																										
-															var realQty= document.getElementById("realQty"+catId).value;
-															var productQty= document.getElementById("productQty"+catId).value;
-															alert(productQty); 
-															 var newVal =parseInt(productQty)+parseInt("1");
-															alert(newVal);
-															if(realQty<newVal)
-																{
-																
-																}
-															else
-																{
-																alert("came");
-																$ .getJSON(
-																		'${updateQuantityInCart}',
-																		{
-																			cartId : catId,
-																			newVal : newVal,									
-																			ajax : 'true'
-																		},
-																		function(data) {
-																			alert(data);
-																	if(data==1)
-																		{
-																		alert(data);
-																		location.reload();
-																		}
-																	else{
-																		alert("Failed!!!");
-																	}	
-																			 
-																		})
-															
-																}  
-														}
-														
-														function minus(catId){
-															
-															
-															var realQty= document.getElementById("realQty"+catId).value;
-															var productQty= document.getElementById("productQty"+catId).value;
-															alert(productQty); 
-															 var newVal =parseInt(productQty)-parseInt("1");
-															alert(newVal);
-															if(realQty<newVal)
-																{
-																
-																}
-															else
-																{
-																alert("came");
-																$ .getJSON(
-																		'${updateQuantityInCart}',
-																		{
-																			cartId : catId,
-																			newVal : newVal,									
-																			ajax : 'true'
-																		},
-																		function(data) {
-																			alert(data);
-																	if(data==1)
-																		{
-																		alert(data);
-																		location.reload();
-																		}
-																	else{
-																		alert("Failed!!!");
-																	}	
-																			 
-																		})
-															
-																}  
-														}
+	<script>
+	$('#r11').on('click', function(){
+		  $(this).parent().find('a').trigger('click')
+		})
 
-														</script>
+		$('#r12').on('click', function(){
+		  $(this).parent().find('a').trigger('click')
+		})
+	
+	</script>			
 </body>
 </html>

@@ -1,4 +1,4 @@
-/*!
+"src/main/webapp/resources/css/coreSlider.css"/*!
  * Bootstrap v3.1.1 (http://getbootstrap.com)
  * Copyright 2011-2014 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
@@ -4763,6 +4763,7 @@ a.list-group-item-danger.active:focus {
 }
 .panel-body {
   padding: 15px;
+  background-color:#f5faff;
 }
 .panel-heading {
   padding: 10px 15px;
@@ -4778,9 +4779,10 @@ a.list-group-item-danger.active:focus {
   margin-bottom: 0;
   font-size: 16px;
   color: inherit;
+  padding:7px;
 }
 .panel-title > a {
-  color: inherit;
+  color: #fff;
 }
 .panel-footer {
   padding: 10px 15px;
@@ -4931,9 +4933,9 @@ a.list-group-item-danger.active:focus {
   margin-bottom: 20px;
 }
 .panel-group .panel {
-  margin-bottom: 0;
+  margin-bottom: 1;
   overflow: hidden;
-  border-radius: 4px;
+  border-radius: 0px;
 }
 .panel-group .panel + .panel {
   margin-top: 5px;
@@ -4955,7 +4957,7 @@ a.list-group-item-danger.active:focus {
 }
 .panel-default > .panel-heading {
   color: #333;
-  background-color: #f5f5f5;
+  background-color: #1565c0;
   border-color: #ddd;
 }
 .panel-default > .panel-heading + .panel-collapse .panel-body {
@@ -5827,3 +5829,92 @@ button.close {
 .detls_input input {width: 100%; border: solid 1px #ccc !important; padding: 10px; margin: 0; font-weight: 500 !important;}
 .detls_input .col-sm-4, .detls_input .col-sm-3, .detls_input .col-sm-1 {padding: 0}
 .referal_sec .col-sm-3 {padding: 0}
+.uK6xOa {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+._3fgAI3 {
+    width: 278px;
+}
+.Th26Zc {
+    position: relative;
+    margin-bottom: 10px;
+}
+._366U7Q {
+    height: 50px;
+}
+._16qL6K {
+    width: 100%;
+    font-size: 14px;
+   /*  border: 1px solid var(--color-grey-grade2); */
+    outline: none;
+    border-radius: 0px;
+    padding: 20px 16px 0 13px;
+    box-shadow: none;
+    -moz-appearance: textfield;
+}
+._1QG_7g {
+    width: 100%;
+    margin-bottom: 0;
+}
+._1X5WZZ {
+    position: relative;
+    width: 100%;
+}
+._3XXwRR {
+    padding-left: 13px;
+    width: 100%;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+._2dwzAy {
+    font-size: 12px;
+    color: #878787;
+    margin-bottom: 10px;
+}
+._3qg3HS {
+    margin-bottom: 16px;
+    width: 100%;
+}
+._2tcMoY {
+    border-bottom: none;
+    display: inline-block;
+    margin-right: 32px;
+}
+._1Icwrf {
+    cursor: auto;
+}
+._8J-bZE {
+    cursor: pointer;
+}
+._16qL6K:focus ~ ._20i8vs, ._3CMTvd {
+    -webkit-transform: translateY(-15%) scale(0.815); 
+     transform: translateY(-15%) scale(0.815); 
+     padding: 18px 0 0 15px; 
+}
+._20i8vs {
+     position: absolute; 
+    left: 0; 
+    top: 0; 
+    -webkit-transform-origin: top left; 
+    transform-origin: top left; 
+    padding: 18px 20px 0;
+    font-size: 14px;
+    color: #878787;
+    pointer-events: none;
+    width: 100%;
+    transition: -webkit-transform 0.2s ease;
+    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+._3llGqN {
+    margin-top: 16px;
+    width: 570px;
+}
